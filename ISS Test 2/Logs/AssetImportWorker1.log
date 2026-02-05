@@ -1,0 +1,898 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.4f1 (fdd3b8998ec4) revision 16634808'; Using compiler version '194234433'; Build Type 'Release'
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sffig" at "2026-02-05T13:23:09.7814718Z"
+OS: 'Windows 11  (10.0.26200) Core' Language: 'en' Physical Memory: 16088 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-02-05T13:23:09Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.4f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker1
+-projectPath
+C:/Users/sffig/ISS Test 2
+-logFile
+Logs/AssetImportWorker1.log
+-srvPort
+61458
+-licensingIpc
+LicenseClient-sffig
+-job-worker-count
+7
+-background-job-worker-count
+8
+-gc-helper-count
+1
+-name
+AssetImport
+Successfully changed project path to: C:/Users/sffig/ISS Test 2
+C:/Users/sffig/ISS Test 2
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [11124]  Target information:
+
+Player connection [11124]  * "[IP] 10.53.3.198 [Port] 0 [Flags] 2 [Guid] 2273663561 [EditorId] 2273663561 [Version] 1048832 [Id] WindowsEditor(7,Sams-Laptop) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [11124] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [11124] Host joined alternative multi-casting on [225.0.0.222:34997]...
+JobSystem: Creating JobQueue using job-worker-count value 7
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 11.40 ms, found 3 plugins.
+Preloading 1 native plugins for Editor in 0.90 ms.
+Initialize engine version: 6000.3.4f1 (fdd3b8998ec4)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.4f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/sffig/ISS Test 2/Assets
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3050 Laptop GPU (ID=0x25a2)
+    Vendor:   NVIDIA
+    VRAM:     3964 MB
+    Driver:   32.0.15.8157
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.4f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.4f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.4f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56712
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.4f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.4f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.003147 seconds.
+- Loaded All Assemblies, in  0.584 seconds
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.623 seconds
+Domain Reload Profiling: 1203ms
+	BeginReloadAssembly (180ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (1ms)
+	RebuildCommonClasses (50ms)
+	RebuildNativeTypeToScriptingClass (19ms)
+	initialDomainReloadingComplete (76ms)
+	LoadAllAssembliesAndSetupDomain (253ms)
+		LoadAssemblies (177ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (248ms)
+			TypeCache.Refresh (245ms)
+				TypeCache.ScanAssembly (227ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (623ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (569ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (89ms)
+			SetLoadedEditorAssemblies (6ms)
+			BeforeProcessingInitializeOnLoad (125ms)
+			ProcessInitializeOnLoadAttributes (230ms)
+			ProcessInitializeOnLoadMethodAttributes (118ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Import Worker Mode flag is 0x00
+Begin MonoManager ReloadAssembly
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.17.4+4293ba1
+  Session Id:              b06cbb4601c843029b821f1c6fc16437
+  Correlation Id:          f540c086f977ed7a0fa2d22e594c64dc
+  External correlation Id: 5602994305663537001
+  Machine Id:              ASKRrxY6EIE0QHTsStpGaUqLqRo=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-sffig" (connect: 0.00s, validation: 0.00s, handshake: 3.01s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-sffig-notifications" at "2026-02-05T13:23:12.792401Z"
+[Licensing::Module] Licensing Background thread has ended after 3.01s
+[Licensing::Module] Licensing is initialized (took 0.50s).
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 2475921213593-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+- Loaded All Assemblies, in  1.612 seconds
+Refreshing native plugins compatible for Editor in 2.31 ms, found 3 plugins.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.NullReferenceException: Object reference not set to an instance of an object
+  at Unity.XR.Oculus.OculusLoader.AssetPathToAbsolutePath (System.String assetPath) [0x0003d] in .\Library\PackageCache\com.unity.xr.oculus@44578ba4bd45\Runtime\OculusLoader.cs:312 
+  at Unity.XR.Oculus.OculusLoader.EditorLoadOVRPlugin () [0x0008c] in .\Library\PackageCache\com.unity.xr.oculus@44578ba4bd45\Runtime\OculusLoader.cs:297 
+  at (wrapper managed-to-native) System.Reflection.RuntimeMethodInfo.InternalInvoke(System.Reflection.RuntimeMethodInfo,object,object[],System.Exception&)
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x0006a] in <1eb9db207454431c84a47bcd81e79c37>:0 
+   --- End of inner exception stack trace ---
+  at System.Reflection.RuntimeMethodInfo.Invoke (System.Object obj, System.Reflection.BindingFlags invokeAttr, System.Reflection.Binder binder, System.Object[] parameters, System.Globalization.CultureInfo culture) [0x00083] in <1eb9db207454431c84a47bcd81e79c37>:0 
+  at System.Reflection.MethodBase.Invoke (System.Object obj, System.Object[] parameters) [0x00000] in <1eb9db207454431c84a47bcd81e79c37>:0 
+  at UnityEditor.EditorAssemblies.ProcessInitializeOnLoadMethodAttributes () [0x00087] in <07f4737e5133458982cbf3761bb87dfd>:0 
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadMethodAttributes ()
+
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:True
+Mono: successfully reloaded assembly
+Package Manager log level set to [2]
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+[Package Manager] Failed to launch server process. Reason: Unity was launched with the -noUpm command-line argument
+[Package Manager] Unable to send message (not connected to server process).
+[Package Manager] Cannot connect to Unity Package Manager local server
+- Finished resetting the current domain, in  1.115 seconds
+Domain Reload Profiling: 2719ms
+	BeginReloadAssembly (777ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (8ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (42ms)
+	RebuildCommonClasses (104ms)
+	RebuildNativeTypeToScriptingClass (22ms)
+	initialDomainReloadingComplete (80ms)
+	LoadAllAssembliesAndSetupDomain (619ms)
+		LoadAssemblies (532ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (248ms)
+			TypeCache.Refresh (172ms)
+				TypeCache.ScanAssembly (155ms)
+			BuildScriptInfoCaches (55ms)
+			ResolveRequiredComponents (17ms)
+	FinalizeReload (1116ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (805ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (4ms)
+			SetLoadedEditorAssemblies (8ms)
+			BeforeProcessingInitializeOnLoad (201ms)
+			ProcessInitializeOnLoadAttributes (401ms)
+			ProcessInitializeOnLoadMethodAttributes (183ms)
+			AfterProcessingInitializeOnLoad (8ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (10ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+Refreshing native plugins compatible for Editor in 2.54 ms, found 3 plugins.
+Preloading 1 native plugins for Editor in 0.11 ms.
+Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 4490 unused Assets / (4.0 MB). Loaded Objects now: 5309.
+Memory consumption went from 124.6 MB to 120.7 MB.
+Total: 9.709300 ms (FindLiveObjects: 1.142400 ms CreateObjectMapping: 0.503100 ms MarkObjects: 6.051500 ms  DeleteObjects: 2.011200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 314150.698322 seconds.
+  path: Assets/International Space Station (ISS) [internal].fbx
+  artifactKey: Guid(10d5fc1adc7709d42848d3d9633a4c70) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/International Space Station (ISS) [internal].fbx using Guid(10d5fc1adc7709d42848d3d9633a4c70) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '90bbc4b479e41e341e8aeb07a6bb6a5a') in 1.2556987 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1479
+
+========================================================================
+Received Import Request.
+  Time since last request: 252.909741 seconds.
+  path: Assets/Textures
+  artifactKey: Guid(264f5c15537665449afb682d64dba6c4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures using Guid(264f5c15537665449afb682d64dba6c4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '38052e24e949d6530b307ae0533a3e4c') in 0.0288412 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/Textures/Columbus_Racks03_Diffuse.png
+  artifactKey: Guid(a17df59570f34eb4db8c20e1f9cc11ce) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Columbus_Racks03_Diffuse.png using Guid(a17df59570f34eb4db8c20e1f9cc11ce) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6856fbd0e5faf87dbaddf59931faf0ee') in 0.1199986 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Textures/PMM_01_Metallic.png
+  artifactKey: Guid(208f4fd2b3249aa41ad6e8cd0af161e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/PMM_01_Metallic.png using Guid(208f4fd2b3249aa41ad6e8cd0af161e5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '36d497c68a60398994bc1c558038901d') in 0.0460846 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Textures/USLab_Racks_04_Diffuse.png
+  artifactKey: Guid(b65ac7147b819c441a00393d0cdd4e69) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_Racks_04_Diffuse.png using Guid(b65ac7147b819c441a00393d0cdd4e69) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3d414ce0bd44ba88c486908e491c8c6a') in 0.0705406 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Textures/BEAM_Int_Normal.png
+  artifactKey: Guid(db171255f3ef92f4d8a94b5916eae931) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/BEAM_Int_Normal.png using Guid(db171255f3ef92f4d8a94b5916eae931) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '4ad838c9ce3baa01b88c293189c0dc1b') in 0.0430382 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Textures/Generic_HubAndMetals_Normal.png
+  artifactKey: Guid(de942204d15dadc46acd7bf7a6ed2b5e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Generic_HubAndMetals_Normal.png using Guid(de942204d15dadc46acd7bf7a6ed2b5e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '23e2236ccbdfaf3c6014662a6e147da8') in 0.0442696 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Textures/Node3_Int_Rack_WHC_Metallic.png
+  artifactKey: Guid(7522964140904534bb7229ebd48b6e18) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node3_Int_Rack_WHC_Metallic.png using Guid(7522964140904534bb7229ebd48b6e18) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '088600125e494765b0e8870cf6560462') in 0.0449285 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Textures/JLP_Racks_Metallic.png
+  artifactKey: Guid(561467a6c8fc2374ea4e28bdf8b4462a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JLP_Racks_Metallic.png using Guid(561467a6c8fc2374ea4e28bdf8b4462a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a1d97f48d80468fad7cbca8e4b09cfbf') in 0.0387782 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Textures/NewRacks59-60_Metallic.png
+  artifactKey: Guid(a1a98bf7439b1444bb8afefa80dd359b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/NewRacks59-60_Metallic.png using Guid(a1a98bf7439b1444bb8afefa80dd359b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9307de0ee20f95074763b4b0a6300c8a') in 0.043669 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/International Space Station (ISS) [internal].fbx
+  artifactKey: Guid(10d5fc1adc7709d42848d3d9633a4c70) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/International Space Station (ISS) [internal].fbx using Guid(10d5fc1adc7709d42848d3d9633a4c70) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e35117c728600da0c7abf46811466cb6') in 1.0602101 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1544
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000052 seconds.
+  path: Assets/Textures/Columbus_Racks02_Normal.png
+  artifactKey: Guid(360fa62b19609ab4bbacab8c9bb3186d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Columbus_Racks02_Normal.png using Guid(360fa62b19609ab4bbacab8c9bb3186d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '23c70eb27f1fc0a66c408bf4612b2e3b') in 0.0513073 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000110 seconds.
+  path: Assets/Textures/USLab_Racks_02_Diffuse.png
+  artifactKey: Guid(8ac1dc922b28cf440bda1fb2944f0739) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_Racks_02_Diffuse.png using Guid(8ac1dc922b28cf440bda1fb2944f0739) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8f025b091fde93d731c77b3e0d970d86') in 0.043213 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Textures/Node3_Int_Bulkhead_Metallic.png
+  artifactKey: Guid(d8563c435cdd6fb4da8eec69a78e2926) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node3_Int_Bulkhead_Metallic.png using Guid(d8563c435cdd6fb4da8eec69a78e2926) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd25a6a44efc3f321fab3765e12bcebbb') in 0.0410933 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Textures/NewRacks59-60_Diffuse.png
+  artifactKey: Guid(c456044f11e66694a92e3f8b1b8ddf40) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/NewRacks59-60_Diffuse.png using Guid(c456044f11e66694a92e3f8b1b8ddf40) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9139740cf6b75542e3d963f09f44486c') in 0.0455323 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000059 seconds.
+  path: Assets/Textures/Node3_Int_Bulkhead_Diffuse.png
+  artifactKey: Guid(400057d9bdb91ba479f3bfdf17b1c088) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node3_Int_Bulkhead_Diffuse.png using Guid(400057d9bdb91ba479f3bfdf17b1c088) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'de1d8eed34637e3a97a3aeed85fdcab9') in 0.0463199 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Textures/USLab_Racks_03_Normal.png
+  artifactKey: Guid(33ae7ac0e713238408161d06c7583978) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_Racks_03_Normal.png using Guid(33ae7ac0e713238408161d06c7583978) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0e91fa76fafa9faba5105066498de350') in 0.042144 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Textures/EXPRESS_Racks_ATLAS_Metallic.png
+  artifactKey: Guid(6256067f1f0310d42b8e5f63fe0a3508) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/EXPRESS_Racks_ATLAS_Metallic.png using Guid(6256067f1f0310d42b8e5f63fe0a3508) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0e89f8203a9ace12921fe1bc4c822271') in 0.0498151 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/Textures/Airlock_1_Normal.png
+  artifactKey: Guid(301d0e02d09ce224b9423328c93a4ec3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Airlock_1_Normal.png using Guid(301d0e02d09ce224b9423328c93a4ec3) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eb460e19fb4ab62bd725cea7408b063f') in 0.0382634 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Textures/JLP_Int_Bulkhead_Diffuse.png
+  artifactKey: Guid(ee616ae9a78e2b34a9375b2184190517) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JLP_Int_Bulkhead_Diffuse.png using Guid(ee616ae9a78e2b34a9375b2184190517) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6e4b6fffdb7515f8d1e4d69814203dae') in 0.049761 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Textures/Node3_Int_Rack_WHC_Normal.png
+  artifactKey: Guid(b6bd96a2aa46f81488a37b57b04c73bc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node3_Int_Rack_WHC_Normal.png using Guid(b6bd96a2aa46f81488a37b57b04c73bc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6b6665e43ea6dcab6205543020b4c7b3') in 0.0468146 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000063 seconds.
+  path: Assets/Textures/Node2_Int_Bulkhead_Normal.png
+  artifactKey: Guid(6e646898754192a4195b598ea5f56225) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node2_Int_Bulkhead_Normal.png using Guid(6e646898754192a4195b598ea5f56225) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '7e9ca676c29853e30417dd501cdfee97') in 0.0458276 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Textures/Node3_Int_Rack_02_Metallic.png
+  artifactKey: Guid(c117119c897376049a1b0b38226b41be) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node3_Int_Rack_02_Metallic.png using Guid(c117119c897376049a1b0b38226b41be) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd5ff70364ed7c242ec3f95d4318f2234') in 0.0459844 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Textures/NewRacks59-60_Normal.png
+  artifactKey: Guid(24a341b57e25b674cbc00f198947681a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/NewRacks59-60_Normal.png using Guid(24a341b57e25b674cbc00f198947681a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '417700c34718137b03a13d89f2222540') in 0.0453086 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000069 seconds.
+  path: Assets/Textures/JLP_Int_Bulkhead_Normal.png
+  artifactKey: Guid(2415f702e03b4e343a9e6d9abe7fc805) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JLP_Int_Bulkhead_Normal.png using Guid(2415f702e03b4e343a9e6d9abe7fc805) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8dca2975a59d726368f9d8188e631fb3') in 0.047035 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Textures/Patches1_Diffuse.png
+  artifactKey: Guid(b7a8f41e02f024a4c8a3ec49e9b2d542) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Patches1_Diffuse.png using Guid(b7a8f41e02f024a4c8a3ec49e9b2d542) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '45745ab9e324905553f6c5b3b6a453f7') in 0.041714 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/Textures/Node3_Int_Rack_01_Diffuse.png
+  artifactKey: Guid(287824e0c9403444eb388dc20ab15cdd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node3_Int_Rack_01_Diffuse.png using Guid(287824e0c9403444eb388dc20ab15cdd) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '709eb5136568a5524004ff54c7bca9df') in 0.0410903 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Textures/EXPRESS_Racks_ATLAS_Normal.png
+  artifactKey: Guid(b0ad925ea43cc5d4a80fa6af7905415b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/EXPRESS_Racks_ATLAS_Normal.png using Guid(b0ad925ea43cc5d4a80fa6af7905415b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '411925f75483d886b32172dfb2c06fc7') in 0.0431717 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Textures/JPM_Racks_02_Metallic.png
+  artifactKey: Guid(69e6b89f2a896ef4980522ddc18df21a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JPM_Racks_02_Metallic.png using Guid(69e6b89f2a896ef4980522ddc18df21a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3ae16770e583f05bb04395fb9eaf1ded') in 0.0434963 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Textures/USLab_Racks_02_Normal.png
+  artifactKey: Guid(476d452f3a50e3142a8e18a1b643770c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_Racks_02_Normal.png using Guid(476d452f3a50e3142a8e18a1b643770c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c4b50f3ee796ee532a25a67b8ec8e6e7') in 0.0440324 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000165 seconds.
+  path: Assets/Textures/BEAM_Int_Metallic.png
+  artifactKey: Guid(2499800ba58a16649ac0c06a6f31fb74) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/BEAM_Int_Metallic.png using Guid(2499800ba58a16649ac0c06a6f31fb74) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b8c829d88575976f29420a78ac3cdd48') in 0.0547602 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Textures/Cupola_Int_Metallic.png
+  artifactKey: Guid(63c713f5d4b647546bfd65d01b7a316b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Cupola_Int_Metallic.png using Guid(63c713f5d4b647546bfd65d01b7a316b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '024c45ca58f6cc63b0ec5e60bf5f8da4') in 0.0457083 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/Textures/USLab_Racks_01_Normal.png
+  artifactKey: Guid(f7556ae3e3a71ac43b30097b1100ee79) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_Racks_01_Normal.png using Guid(f7556ae3e3a71ac43b30097b1100ee79) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '906915b82ce36319b08b131455dae316') in 0.039083 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/Textures/JPM_Racks_03_Normal.png
+  artifactKey: Guid(f0da02f0e5f28c845bdad7cf10cb14a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JPM_Racks_03_Normal.png using Guid(f0da02f0e5f28c845bdad7cf10cb14a6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3c8cff79e5716b3e2854283ffc1cc1f4') in 0.0519208 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Textures/Patches2_Diffuse.png
+  artifactKey: Guid(1512be81fad4969418e2038f87143175) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Patches2_Diffuse.png using Guid(1512be81fad4969418e2038f87143175) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '43c140d94a08ec29343e5d5121e16594') in 0.042592 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/Textures/Node3_Int_Bulkhead_Normal.png
+  artifactKey: Guid(8876a0b10d01c734ab321e1c7d3875ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node3_Int_Bulkhead_Normal.png using Guid(8876a0b10d01c734ab321e1c7d3875ad) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'a5f2603c630e619cb11a8310c1c82ac6') in 0.03848 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/Textures/Columbus_Racks03_Metallic.png
+  artifactKey: Guid(c2fbdb78c34305f4dbd703af8a0cb415) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Columbus_Racks03_Metallic.png using Guid(c2fbdb78c34305f4dbd703af8a0cb415) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6ddfc5ee2232ac1f4b6bc5d04dbe4c8b') in 0.0372697 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Textures/JLP_Int_Bulkhead_Metallic.png
+  artifactKey: Guid(694d97accdb569f4687148367cdfb225) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JLP_Int_Bulkhead_Metallic.png using Guid(694d97accdb569f4687148367cdfb225) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c11e6a45958bd117a6a915edd2bff12d') in 0.0426407 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/Textures/Columbus_Racks01_Metallic.png
+  artifactKey: Guid(3993512e431a6654e819dcb30f7868c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Columbus_Racks01_Metallic.png using Guid(3993512e431a6654e819dcb30f7868c9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e973ba9e53d866774f1c7c238f9747e3') in 0.0373741 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Textures/USLab_AFT_Bulkhead_Normal.png
+  artifactKey: Guid(81afbd660b8885344925479e7dd3eff4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_AFT_Bulkhead_Normal.png using Guid(81afbd660b8885344925479e7dd3eff4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5acb7b98b6d82409530198cdea6c6c5c') in 0.0394075 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Textures/JPM_Bulkhead_Normal.png
+  artifactKey: Guid(4f45fa7dc6493e649b4ff73f6a977c4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JPM_Bulkhead_Normal.png using Guid(4f45fa7dc6493e649b4ff73f6a977c4b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '495e8fbd96bbce30f15755dbeb2f5567') in 0.0380256 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Textures/USLab_FWD_Bulkhead_Normal.png
+  artifactKey: Guid(624b72873c9de01478f2be6f7dfd8160) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_FWD_Bulkhead_Normal.png using Guid(624b72873c9de01478f2be6f7dfd8160) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0175d72a36bfde067209af2a8c867971') in 0.04055 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Textures/USLab_Racks_01_Diffuse.png
+  artifactKey: Guid(a66e595cb69f0a642997370ed91e3f23) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_Racks_01_Diffuse.png using Guid(a66e595cb69f0a642997370ed91e3f23) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '75558811b5c221d5de253003b7a7ab54') in 0.0399017 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/Textures/USLab_FWD_Bulkhead_Diffuse.png
+  artifactKey: Guid(b7d285531d0b1c249bae7eda90a30c3a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_FWD_Bulkhead_Diffuse.png using Guid(b7d285531d0b1c249bae7eda90a30c3a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd3fe9b0814831a7df2343270c780e905') in 0.0372823 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Textures/PMM_01_Diffuse.png
+  artifactKey: Guid(9df75a18dd72c4f4a89f67d1b09d43cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/PMM_01_Diffuse.png using Guid(9df75a18dd72c4f4a89f67d1b09d43cb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3dc2a1b82c4bdf4c4ab64554b1878f80') in 0.0425788 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/Textures/JPM_Racks_02_Diffuse.png
+  artifactKey: Guid(fd7c5974ead25f84b9283fa3fa5ac116) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JPM_Racks_02_Diffuse.png using Guid(fd7c5974ead25f84b9283fa3fa5ac116) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'eb6ac6915ed098051d3ba3b0083a6164') in 0.0363191 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/Textures/Columbus_Racks01_Normal.png
+  artifactKey: Guid(d4ca7786430084540afb22ebfab89265) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Columbus_Racks01_Normal.png using Guid(d4ca7786430084540afb22ebfab89265) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '87733bb4a7101935d463347a09ffbafd') in 0.0389955 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Textures/Cupola_Int_Diffuse.png
+  artifactKey: Guid(17361d1739502404385120d5170318e0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Cupola_Int_Diffuse.png using Guid(17361d1739502404385120d5170318e0) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1ac21745320a1aa27dfb5a6c897d8d71') in 0.034055 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Textures/BEAM_Int_Diffuse.png
+  artifactKey: Guid(e39805f462c9d01498a92c4e18614d0d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/BEAM_Int_Diffuse.png using Guid(e39805f462c9d01498a92c4e18614d0d) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '15b7c360dae22fe80e0b22a27c591ed0') in 0.0434533 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/Textures/JLP_Racks_Normal.png
+  artifactKey: Guid(deb33887a52e62941b4ba80107ff02b1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JLP_Racks_Normal.png using Guid(deb33887a52e62941b4ba80107ff02b1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '2da34ef00942d7c1aad2c2ca6d615cff') in 0.038133 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/Textures/Airlock_1_Metallic.png
+  artifactKey: Guid(863f9179fe0ea5149863713ade656515) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Airlock_1_Metallic.png using Guid(863f9179fe0ea5149863713ade656515) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6ecbab1961c1033decdc96e6420cdb89') in 0.0377786 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Textures/Node2_Int_Rack_Metallic.png
+  artifactKey: Guid(988ffcdb73b58164ea3fee88ffd72a6b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node2_Int_Rack_Metallic.png using Guid(988ffcdb73b58164ea3fee88ffd72a6b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0e594b39904b32a65198869686175f9b') in 0.048155 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/Textures/USLab_AFT_Bulkhead_Diffuse.png
+  artifactKey: Guid(9ddca3ae5752a2040b48fcdb6b62383b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_AFT_Bulkhead_Diffuse.png using Guid(9ddca3ae5752a2040b48fcdb6b62383b) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c2385ff4103283604d5a07c50754c87f') in 0.0392035 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Textures/Bishop_Metallic.png
+  artifactKey: Guid(806a52082f175fa478dbaf479c5f673c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Bishop_Metallic.png using Guid(806a52082f175fa478dbaf479c5f673c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '21a35e9189dacf665e5c67658b6b1a60') in 0.0475086 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Textures/Columbus_Int_Bulkhead_Metallic.png
+  artifactKey: Guid(c0017e90773f8a14093eec444301547e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Columbus_Int_Bulkhead_Metallic.png using Guid(c0017e90773f8a14093eec444301547e) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'fcdc96353dc527aab1fbe7eac5691575') in 0.0462758 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Textures/Bishop_Normal.png
+  artifactKey: Guid(aa0bc9161556316419f1037ffc2d98cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Bishop_Normal.png using Guid(aa0bc9161556316419f1037ffc2d98cc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b8e71f95a82f436545b193e1a74c31aa') in 0.0478201 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000087 seconds.
+  path: Assets/Textures/Columbus_Racks02_Metallic.png
+  artifactKey: Guid(593faaa295c601d4d8091fd86aac0551) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Columbus_Racks02_Metallic.png using Guid(593faaa295c601d4d8091fd86aac0551) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'b644a8fa9b788384aff7db17c24328a8') in 0.0464804 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/Textures/USLab_Racks_04_Normal.png
+  artifactKey: Guid(9f82e92e7bcb2e94f969e1b93177ed0c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_Racks_04_Normal.png using Guid(9f82e92e7bcb2e94f969e1b93177ed0c) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3ddc95c1329815a7ecac9cd4ec2e0bcc') in 0.057901 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000062 seconds.
+  path: Assets/Textures/USLab_Racks_03_Metallic.png
+  artifactKey: Guid(863f04bf8a3ba0c43818565356edf540) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_Racks_03_Metallic.png using Guid(863f04bf8a3ba0c43818565356edf540) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '97b64f62e11fa48bffad465f0d01c5a0') in 0.0464153 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Textures/JPM_Racks_02_Normal.png
+  artifactKey: Guid(a60f0c256dac5be4388eede666bd4356) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JPM_Racks_02_Normal.png using Guid(a60f0c256dac5be4388eede666bd4356) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e43b027e07450430aff323df9bc0fea0') in 0.0422516 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000046 seconds.
+  path: Assets/Textures/USLab_FWD_Bulkhead_Metallic.png
+  artifactKey: Guid(eed48531084e1804d9fa7830d3510549) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_FWD_Bulkhead_Metallic.png using Guid(eed48531084e1804d9fa7830d3510549) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '41a1bc4a22b610bc602c74878d9c8b17') in 0.0448634 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000064 seconds.
+  path: Assets/Textures/Airlock_2_Diffuse.png
+  artifactKey: Guid(b9c7b0367567e534b8b13d0be0337670) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Airlock_2_Diffuse.png using Guid(b9c7b0367567e534b8b13d0be0337670) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3332f15fa592fa3c1cdce43e22814eff') in 0.0413196 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Textures/Generic_HubAndMetals_Metallic.png
+  artifactKey: Guid(abe7257fee7fc4b4b83ea0d43f4a1db2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Generic_HubAndMetals_Metallic.png using Guid(abe7257fee7fc4b4b83ea0d43f4a1db2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '6f9230f07d751effcb5a9cfbe8e2fe83') in 0.0488979 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Textures/USLab_Racks_04_Metallic.png
+  artifactKey: Guid(eba4e320bc479f54ca13d542022f4a68) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_Racks_04_Metallic.png using Guid(eba4e320bc479f54ca13d542022f4a68) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'c3d467647fa1c9a940481d826d60b129') in 0.0385597 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/Textures/JPM_Racks_03_Diffuse.png
+  artifactKey: Guid(f7b3edb7816c33348ba90c75453ee5b1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JPM_Racks_03_Diffuse.png using Guid(f7b3edb7816c33348ba90c75453ee5b1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '96f2a4365ff144a6df01394d25de8ad1') in 0.0513936 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Textures/Airlock_2_Metallic.png
+  artifactKey: Guid(aa09fe228e4936442b23382dd5cc23bb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Airlock_2_Metallic.png using Guid(aa09fe228e4936442b23382dd5cc23bb) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '447fa47865363a48bf7202a8f63d01fe') in 0.0464582 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000137 seconds.
+  path: Assets/Textures/Generic_HubAndMetals_Diffuse.png
+  artifactKey: Guid(1134653a8598b5a48b64c5bc09eccbbc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Generic_HubAndMetals_Diffuse.png using Guid(1134653a8598b5a48b64c5bc09eccbbc) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '807ba3ab82b662e7016e756f6484bde5') in 0.0467316 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/Textures/PMM_01_Normal.png
+  artifactKey: Guid(e905e06f19928c649bb95b991e35afd9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/PMM_01_Normal.png using Guid(e905e06f19928c649bb95b991e35afd9) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'd41312618cb8b7e3f372fbc3cee08ad4') in 0.0351141 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Textures/Columbus_Racks02_Diffuse.png
+  artifactKey: Guid(2fa24a036b1798445b8abc501d8ef8d4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Columbus_Racks02_Diffuse.png using Guid(2fa24a036b1798445b8abc501d8ef8d4) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '9f723bf9a2fdd197769c66bde65b43cf') in 0.0406688 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Textures/Cupola_Int_Normal.png
+  artifactKey: Guid(6763eb7cbe4b4cd478b3b2571873e4b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Cupola_Int_Normal.png using Guid(6763eb7cbe4b4cd478b3b2571873e4b5) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '3a355b5d395cf51d13d202c49eb3f25f') in 0.0400877 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Textures/USLab_Racks_03_Diffuse.png
+  artifactKey: Guid(2b0728ff1d3408445a12200773f3c5c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/USLab_Racks_03_Diffuse.png using Guid(2b0728ff1d3408445a12200773f3c5c1) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '8a556857c704841d1f9528ebcf75a47e') in 0.0441432 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Textures/Generic_Misc_Details_Diffuse.png
+  artifactKey: Guid(a21d35291fee52247835119b7a974ea6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Generic_Misc_Details_Diffuse.png using Guid(a21d35291fee52247835119b7a974ea6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '26aa894eef33af27bbe0686fd7dc9272') in 0.0471459 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000055 seconds.
+  path: Assets/Textures/Node3_Int_Rack_02_Diffuse.png
+  artifactKey: Guid(71af28e02740f5045af71bca099835f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node3_Int_Rack_02_Diffuse.png using Guid(71af28e02740f5045af71bca099835f6) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '23895f32b111c69e0be9fb408423641b') in 0.0459518 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/Textures/Columbus_Racks03_Normal.png
+  artifactKey: Guid(d795c5423275f6c45ac9c3ddce2e2406) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Columbus_Racks03_Normal.png using Guid(d795c5423275f6c45ac9c3ddce2e2406) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '5a571016d338137cb5c341ac55eb0839') in 0.0463529 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Textures/Columbus_Racks01_Diffuse.png
+  artifactKey: Guid(4d5e5a3d8a78ddc4789ac1c805eda516) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Columbus_Racks01_Diffuse.png using Guid(4d5e5a3d8a78ddc4789ac1c805eda516) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0775837f1d4597a4d6110f16ded94bc2') in 0.0705241 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/Textures/Node2_Int_Bulkhead_Diffuse.png
+  artifactKey: Guid(7b42bb9bdbb5bbb44aa86e556e3696e2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node2_Int_Bulkhead_Diffuse.png using Guid(7b42bb9bdbb5bbb44aa86e556e3696e2) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'cdce29a2236f60174921fdee54431ab2') in 0.0428964 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Textures/Airlock_1_Diffuse.png
+  artifactKey: Guid(22e1b9466df52004888c736010de4326) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Airlock_1_Diffuse.png using Guid(22e1b9466df52004888c736010de4326) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'e957b8318862c9468a0309c96ba233df') in 0.0409204 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Textures/Node3_Int_Rack_WHC_Diffuse.png
+  artifactKey: Guid(9bc78be4a2f725b43a450c20d4122603) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node3_Int_Rack_WHC_Diffuse.png using Guid(9bc78be4a2f725b43a450c20d4122603) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '1f54edb25dd70a79bfbc92e205a7f8d8') in 0.0409667 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/Textures/Node2_Int_Rack_Diffuse.png
+  artifactKey: Guid(7ad4c09a7073a0f45941bc8167095f1a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Node2_Int_Rack_Diffuse.png using Guid(7ad4c09a7073a0f45941bc8167095f1a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'af8cfe44fb7a83a18256b1aa41e32127') in 0.0413329 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/Textures/Airlock_2_Normal.png
+  artifactKey: Guid(0d66279197f574548a99e298e81418ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/Airlock_2_Normal.png using Guid(0d66279197f574548a99e298e81418ae) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'db435de959001ad5f1fbb31ba183e9f4') in 0.0444563 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Textures/JPM_Bulkhead_Metallic.png
+  artifactKey: Guid(22d869580cf75614bae14058c645061a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JPM_Bulkhead_Metallic.png using Guid(22d869580cf75614bae14058c645061a) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: '0c8c9ecff9551355ca4884c0ef17e496') in 0.0396821 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/Textures/JLP_Racks_Diffuse.png
+  artifactKey: Guid(399ab0122143f804a97ce3413534ee46) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d)
+Start importing Assets/Textures/JLP_Racks_Diffuse.png using Guid(399ab0122143f804a97ce3413534ee46) Importer(2089858483,b0f066a214c2f5e87bad3c948f4d605d) (ScriptedImporter) -> (artifact id: 'df7716f17c2444b0abd24617eb4bf189') in 0.0419307 seconds
+Number of updated asset objects reloaded before import = 0Number of asset objects unloaded after import = 1
+
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
