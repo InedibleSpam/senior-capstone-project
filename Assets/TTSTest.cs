@@ -12,7 +12,7 @@ public class TTSTest : MonoBehaviour
 
         if (speaker != null)
         {
-            speaker.Speak("Hello. If you hear this, text to speech is working.");
+            speaker.Speak("Hello. If you hear this, text to speech is working. BANANA");
         }
         else
         {
