@@ -5,6 +5,6 @@ public class TitleScreenManager : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("MainAppScene");
+        SceneManager.LoadScene("FreeRoamScene");
     }
 }
