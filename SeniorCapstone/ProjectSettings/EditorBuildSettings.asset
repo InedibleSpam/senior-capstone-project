@@ -11,9 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/FreeRoamScene.unity
     guid: 66f6ddcb56f0afb4495dff1597b12d26
-  - enabled: 0
-    path: Assets/Scenes/FreeRoamScene (Old).unity
-    guid: 381744471bf889f46b4b6c688506d909
+  - enabled: 1
+    path: Assets/Scenes/GuidedTourScene.unity
+    guid: 6a0af1f91ad023643bd99c7b82cd45e4
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ad53cd09069b1d444985300fe530cd50, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
