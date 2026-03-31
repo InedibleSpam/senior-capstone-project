@@ -1,15 +1,23 @@
 using UnityEngine;
+using System.Collections;
 
 public class TourManager : MonoBehaviour
 {
     public static TourManager Instance;
 
+    [Header("Tour State")]
     public int currentStep = 0;
 
-    public GameObject[] stepArrows;     // One arrow/path per step
-    public Collider[] lockedDoors;      // Doors that block progress
-    public AudioSource narration;       // Current narration
-    public TourTest_TTS ttsSpeaker;     // Reference to TTS component
+    [Header("Arrows")]
+    public GameObject[] stepArrows; // Step-based arrow groups
+
+    [Header("Doors")]
+    public Collider[] lockedDoors; // Doors in order
+
+    [Header("TTS")]
+    public TourTest_TTS ttsSpeaker;
+    private bool isNarrating = false;
+
     private void Awake()
     {
         Instance = this;
@@ -20,67 +28,106 @@ public class TourManager : MonoBehaviour
         UpdateStep();
     }
 
+    // 🔊 Called by RoomTrigger
+    public void PlayNarration(string id)
+    {
+        if (ttsSpeaker == null)
+        {
+            Debug.LogError("TTS Speaker not assigned!");
+            return;
+        }
+
+        Debug.Log("🔊 Playing narration: " + id);
+
+        isNarrating = true;
+
+        StopAllCoroutines();
+        SetAllDoors(true); // LOCK ALL DOORS
+        SetAllArrows(false);
+
+        ttsSpeaker.SpeakByID(id);
+
+        StartCoroutine(WaitAndAdvance());
+    }
+
+    IEnumerator WaitAndAdvance()
+    {
+        yield return new WaitForSeconds(4f); // ideally replace with TTS completion later
+
+        Debug.Log("➡️ Advancing step after narration");
+
+        isNarrating = false;
+
+        NextStep();
+    }
+
     public void NextStep()
     {
         currentStep++;
         UpdateStep();
     }
 
-    void UpdateStep()
+void UpdateStep()
     {
-        // Disable all arrows
-        foreach (var arrow in stepArrows)
-            arrow.SetActive(false);
+        Debug.Log("➡️ Updating to Step: " + currentStep);
 
-        // Enable current arrow
-        if (currentStep < stepArrows.Length)
-            stepArrows[currentStep].SetActive(true);
-
-        // Lock all doors by default
-        foreach (var door in lockedDoors)
-            door.enabled = true;
-
-        // Example logic per step
-        switch (currentStep)
+        if (lockedDoors != null)
         {
-            case 0:
-                // First room: everything locked
-                break;
+            for (int i = 0; i < lockedDoors.Length; i++)
+            {
+                if (lockedDoors[i] != null)
+                {
+                    // Unlock doors at (currentStep - 1) and (currentStep)
+                    bool shouldUnlock =
+                        (i == currentStep) ||
+                        (i == currentStep - 1);
 
-            case 1:
-                // Unlock first door
-                lockedDoors[0].enabled = false;
-                break;
+                    // Lock everything else
+                    lockedDoors[i].enabled = !shouldUnlock;
+                }
+            }
+        }
 
-            case 2:
-                lockedDoors[1].enabled = false;
-                break;
+        UpdateArrows();
+    }
+
+    void SetAllDoors(bool locked)
+    {
+        if (lockedDoors == null) return;
+
+        foreach (var door in lockedDoors)
+        {
+            if (door != null)
+                door.enabled = locked;
         }
     }
 
-    public void PlayNarration(string id)
-{
-    if (ttsSpeaker == null)
+    void UpdateArrows()
     {
-        Debug.LogError("TTS Speaker not assigned!");
-        return;
+        if (stepArrows == null) return;
+
+        // Turn OFF all arrows
+        foreach (var arrow in stepArrows)
+        {
+            if (arrow != null)
+                arrow.SetActive(false);
+        }
+
+        // Turn ON current step arrows
+        if (currentStep < stepArrows.Length && stepArrows[currentStep] != null)
+        {
+            stepArrows[currentStep].SetActive(true);
+        }
     }
 
-    ttsSpeaker.SpeakByID(id);
-
-    // TEMP: move to next step after delay
-    StartCoroutine(WaitAndAdvance());
-}
-
-System.Collections.IEnumerator WaitAndAdvance()
-{
-    yield return new WaitForSeconds(3f); // adjust per narration length
-    NextStep();
-}
-
-    System.Collections.IEnumerator WaitForNarration()
+    void SetAllArrows(bool state)
     {
-        yield return new WaitWhile(() => narration.isPlaying);
-        NextStep();
+        if (stepArrows == null) return;
+
+        foreach (var arrow in stepArrows)
+        {
+            if (arrow != null)
+                arrow.SetActive(state);
+        }
     }
 }

@@ -2,17 +2,50 @@ using UnityEngine;
 
 public class RoomTrigger : MonoBehaviour
 {
+    [Header("Tour Settings")]
     public int stepToTrigger;
-    public AudioClip narrationClip;
     public string narrationID;
 
-    private void OnTriggerEnter(Collider other)
-{
-    if (!other.CompareTag("Player")) return;
+    private bool hasTriggered = false;
 
-    if (TourManager.Instance.currentStep == stepToTrigger)
+    private void OnTriggerEnter(Collider other)
     {
-        TourManager.Instance.PlayNarration(narrationID);
+        if (hasTriggered) return;
+
+        Debug.Log("Trigger entered by: " + other.name + " | Tag: " + other.tag);
+
+        // Detect player via CharacterController (recommended for VR)
+        if (other.GetComponentInParent<CharacterController>() != null)
+        {
+            Debug.Log("🟢 Player detected in trigger");
+
+            TourManager manager = TourManager.Instance;
+
+            if (manager == null)
+            {
+                Debug.LogError("TourManager instance not found!");
+                return;
+            }
+
+            // Ensure correct step
+            if (manager.currentStep == stepToTrigger)
+            {
+                Debug.Log("✅ Correct step. Triggering narration: " + narrationID);
+
+                hasTriggered = true;
+
+                manager.PlayNarration(narrationID);
+            }
+            else
+            {
+                Debug.Log("🟡 Wrong step. Current: " 
+                    + manager.currentStep + 
+                    " Expected: " + stepToTrigger);
+            }
+        }
+        else
+        {
+            Debug.Log("🔴 Object entered trigger is not the player");
+        }
     }
-}
 }

@@ -1,71 +1,58 @@
-using Meta.WitAi.TTS.Utilities;
+using System.Collections.Generic;
 using UnityEngine;
+using Meta.WitAi.TTS.Utilities;
 
 public class TourTest_TTS : MonoBehaviour
 {
     private TTSSpeaker speaker;
 
-    void Start()
+    private Dictionary<string, string> narrationMap;
+
+    void Awake()
     {
-        // Automatically find TTSSpeaker on the same GameObject
         speaker = GetComponent<TTSSpeaker>();
 
         if (speaker == null)
         {
             Debug.LogError("TTSSpeaker component not found on this GameObject!");
         }
+
+        // Centralized narration definitions
+        narrationMap = new Dictionary<string, string>()
+        {
+            { "Airlock", "This is the airlock." },
+            { "BEAM", "This is the BEAM Module." },
+            { "PMM", "This is the PMM Module." },
+            { "Cupola", "This is the Cupola Module." },
+            { "US_Lab", "This is the US Lab Module." },
+            { "Columbus", "This is the Columbus Module." },
+            { "JPM", "This is the JPM Module." },
+            { "JLP", "This is the JLP Module." }
+        };
     }
+
     public void SpeakByID(string id)
-{
-    if (speaker == null) return;
-
-    switch (id)
     {
-        case "Airlock":
-            speaker.Speak("This is the airlock.");
-            break;
+        if (speaker == null) return;
 
-        case "BEAM":
-            speaker.Speak("This is the BEAM Module.");
-            break;
-
-        case "PMM":
-            speaker.Speak("This is the PMM Module.");
-            break;
-
-        case "Cupola":
-            speaker.Speak("This is the Cupola Module.");
-            break;
-
-        case "US_Lab":
-            speaker.Speak("This is the US Lab Module.");
-            break;
-
-        case "Columbus":
-            speaker.Speak("This is the Columbus Module.");
-            break;
-
-        case "JPM":
-            speaker.Speak("This is the JPM Module.");
-            break;
-
-        case "JLP":
-            speaker.Speak("This is the JLP Module.");
-            break;
-
-        default:
+        if (narrationMap.TryGetValue(id, out string text))
+        {
+            speaker.Speak(text);
+        }
+        else
+        {
             Debug.LogWarning("No narration found for ID: " + id);
-            break;
+        }
     }
-}   
 
-    void OnTranscription(string text)
+    public void SpeakRaw(string text)
     {
-        Debug.Log("Heard: " + text);
-
-        // Respond using TTS
-        if(text.Contains("hello"))
-            speaker.Speak("Hi there! Nice to meet you.");
+        if (speaker == null) return;
+        speaker.Speak(text);
     }
-    
+
+    void OnDisable()
+    {
+        Debug.Log("⚠️ TTSManager was disabled!");
+    }
 }

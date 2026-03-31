@@ -647,7 +647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TourManager
   currentStep: 0
   stepArrows:
-  - {fileID: 0}
+  - {fileID: 799065981}
   - {fileID: 901504084}
   - {fileID: 1614329101}
   - {fileID: 1631880533}
@@ -656,17 +656,16 @@ MonoBehaviour:
   - {fileID: 120641953}
   - {fileID: 384581738}
   lockedDoors:
-  - {fileID: 338259170}
-  - {fileID: 1771801401}
-  - {fileID: 1174309707}
   - {fileID: 760920990}
+  - {fileID: 1174309707}
+  - {fileID: 1771801401}
+  - {fileID: 338259170}
   - {fileID: 1983500052}
   - {fileID: 402904078}
   - {fileID: 2142029076}
   - {fileID: 437950792}
   - {fileID: 170270321}
-  narration: {fileID: 0}
-  ttsSpeaker: {fileID: 1423789026}
+  ttsSpeaker: {fileID: 1367173763}
 --- !u!4 &98777757
 Transform:
   m_ObjectHideFlags: 0
@@ -1619,7 +1618,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
   stepToTrigger: 2
-  narrationClip: {fileID: 0}
   narrationID: PMM
 --- !u!65 &242881872
 BoxCollider:
@@ -3699,288 +3697,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -323905244985039953, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
---- !u!1 &524464147
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 524464148}
-  - component: {fileID: 524464149}
-  - component: {fileID: 524464150}
-  - component: {fileID: 524464151}
-  m_Layer: 0
-  m_Name: TTSSpeaker
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &524464148
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524464147}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1106673890}
-  - {fileID: 1423789027}
-  m_Father: {fileID: 711628290}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &524464149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524464147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b15403450229c3a4b8455a61d6143a6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Meta.WitAi.TTS::Meta.WitAi.TTS.Utilities.TTSSpeaker
-  _events:
-    OnTextPlaybackStart:
-      m_PersistentCalls:
-        m_Calls: []
-    OnTextPlaybackCancelled:
-      m_PersistentCalls:
-        m_Calls: []
-    OnTextPlaybackFinished:
-      m_PersistentCalls:
-        m_Calls: []
-    OnAudioClipPlaybackReady:
-      m_PersistentCalls:
-        m_Calls: []
-    OnAudioClipPlaybackStart:
-      m_PersistentCalls:
-        m_Calls: []
-    OnAudioClipPlaybackCancelled:
-      m_PersistentCalls:
-        m_Calls: []
-    OnAudioClipPlaybackFinished:
-      m_PersistentCalls:
-        m_Calls: []
-    _onInit:
-      m_PersistentCalls:
-        m_Calls: []
-    _onComplete:
-      m_PersistentCalls:
-        m_Calls: []
-    _onLoadBegin:
-      m_PersistentCalls:
-        m_Calls: []
-    _onLoadAbort:
-      m_PersistentCalls:
-        m_Calls: []
-    _onLoadFailed:
-      m_PersistentCalls:
-        m_Calls: []
-    _onLoadSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    _onFirstSampleReady:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackReady:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackStart:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackCancelled:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackClipUpdated:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackComplete:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackQueueBegin:
-      m_PersistentCalls:
-        m_Calls: []
-    _onPlaybackQueueComplete:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataQueued:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipLoadBegin:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataLoadBegin:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipLoadAbort:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataLoadAbort:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipLoadFailed:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataLoadFailed:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipLoadSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataLoadSuccess:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataPlaybackReady:
-      m_PersistentCalls:
-        m_Calls: []
-    OnStartSpeaking:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataPlaybackStart:
-      m_PersistentCalls:
-        m_Calls: []
-    OnCancelledSpeaking:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataPlaybackCancelled:
-      m_PersistentCalls:
-        m_Calls: []
-    OnFinishedSpeaking:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipDataPlaybackFinished:
-      m_PersistentCalls:
-        m_Calls: []
-  PrependedText: 
-  AppendedText: 
-  _ttsService: {fileID: 1656967587}
-  presetVoiceID: WIT$BRITISH BUTLER
-  customWitVoiceSettings:
-    SettingsId: 
-    PrependedText: 
-    AppendedText: 
-    voice: Charlie
-    style: default
-    speed: 100
-    pitch: 100
-  verboseLogging: 0
---- !u!82 &524464150
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524464147}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!114 &524464151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 524464147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0dcdd68d79ec174faaa2adc21e3c1b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TourTest_TTS
 --- !u!1 &528255007 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8736708879560132302, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
@@ -4681,6 +4397,80 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 8453782400428810499, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
+--- !u!1001 &617226702
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 799065982}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 7.468976
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 7.468976
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 7.468976
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.32
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -21.64
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+      propertyPath: m_Name
+      value: Arrow1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+--- !u!4 &617226703 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d49108176ecc2438e8097ee1b69f16be, type: 3}
+  m_PrefabInstance: {fileID: 617226702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &618275919
 GameObject:
   m_ObjectHideFlags: 0
@@ -5117,39 +4907,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2755710129363232069, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
---- !u!1 &711628289
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 711628290}
-  m_Layer: 0
-  m_Name: TTS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &711628290
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 711628289}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1656967591}
-  - {fileID: 524464148}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &721358469 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2860568336528498606, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
@@ -5618,6 +5375,38 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -662720787788423640, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
+--- !u!1 &799065981
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 799065982}
+  m_Layer: 0
+  m_Name: Step0_Arrows
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &799065982
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799065981}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 617226703}
+  m_Father: {fileID: 2138632110}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &799666686 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7347077150053828223, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
@@ -5718,7 +5507,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
   stepToTrigger: 7
-  narrationClip: {fileID: 0}
   narrationID: JLP
 --- !u!65 &807787980
 BoxCollider:
@@ -8722,135 +8510,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -1410297901646259028, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
---- !u!1 &1106673889
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1106673890}
-  - component: {fileID: 1106673891}
-  m_Layer: 0
-  m_Name: TTSSpeakerAudio
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1106673890
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106673889}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 524464148}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &1106673891
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106673889}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
 --- !u!1 &1110145603
 GameObject:
   m_ObjectHideFlags: 0
@@ -8897,7 +8556,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
   stepToTrigger: 1
-  narrationClip: {fileID: 0}
   narrationID: BEAM
 --- !u!65 &1110145606
 BoxCollider:
@@ -9839,7 +9497,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
   stepToTrigger: 4
-  narrationClip: {fileID: 0}
   narrationID: US_Lab
 --- !u!65 &1210331547
 BoxCollider:
@@ -10782,6 +10439,629 @@ Transform:
   m_Children: []
   m_Father: {fileID: 477525407}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1367173756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1367173761}
+  - component: {fileID: 1367173760}
+  - component: {fileID: 1367173765}
+  - component: {fileID: 1367173763}
+  - component: {fileID: 1367173764}
+  - component: {fileID: 1367173766}
+  - component: {fileID: 1367173767}
+  - component: {fileID: 1367173768}
+  m_Layer: 0
+  m_Name: TTSManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1367173760
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367173756}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1367173761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367173756}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 10.7099, y: -8.61548, z: -5.88959}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1367173763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367173756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0dcdd68d79ec174faaa2adc21e3c1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TourTest_TTS
+--- !u!114 &1367173764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367173756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b15403450229c3a4b8455a61d6143a6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Meta.WitAi.TTS::Meta.WitAi.TTS.Utilities.TTSSpeaker
+  _events:
+    OnTextPlaybackStart:
+      m_PersistentCalls:
+        m_Calls: []
+    OnTextPlaybackCancelled:
+      m_PersistentCalls:
+        m_Calls: []
+    OnTextPlaybackFinished:
+      m_PersistentCalls:
+        m_Calls: []
+    OnAudioClipPlaybackReady:
+      m_PersistentCalls:
+        m_Calls: []
+    OnAudioClipPlaybackStart:
+      m_PersistentCalls:
+        m_Calls: []
+    OnAudioClipPlaybackCancelled:
+      m_PersistentCalls:
+        m_Calls: []
+    OnAudioClipPlaybackFinished:
+      m_PersistentCalls:
+        m_Calls: []
+    _onInit:
+      m_PersistentCalls:
+        m_Calls: []
+    _onComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    _onLoadBegin:
+      m_PersistentCalls:
+        m_Calls: []
+    _onLoadAbort:
+      m_PersistentCalls:
+        m_Calls: []
+    _onLoadFailed:
+      m_PersistentCalls:
+        m_Calls: []
+    _onLoadSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    _onFirstSampleReady:
+      m_PersistentCalls:
+        m_Calls: []
+    _onPlaybackReady:
+      m_PersistentCalls:
+        m_Calls: []
+    _onPlaybackStart:
+      m_PersistentCalls:
+        m_Calls: []
+    _onPlaybackCancelled:
+      m_PersistentCalls:
+        m_Calls: []
+    _onPlaybackClipUpdated:
+      m_PersistentCalls:
+        m_Calls: []
+    _onPlaybackComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    _onPlaybackQueueBegin:
+      m_PersistentCalls:
+        m_Calls: []
+    _onPlaybackQueueComplete:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipDataQueued:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipLoadBegin:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipDataLoadBegin:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipLoadAbort:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipDataLoadAbort:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipLoadFailed:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipDataLoadFailed:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipLoadSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipDataLoadSuccess:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipDataPlaybackReady:
+      m_PersistentCalls:
+        m_Calls: []
+    OnStartSpeaking:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipDataPlaybackStart:
+      m_PersistentCalls:
+        m_Calls: []
+    OnCancelledSpeaking:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipDataPlaybackCancelled:
+      m_PersistentCalls:
+        m_Calls: []
+    OnFinishedSpeaking:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipDataPlaybackFinished:
+      m_PersistentCalls:
+        m_Calls: []
+  PrependedText: 
+  AppendedText: 
+  _ttsService: {fileID: 1367173765}
+  presetVoiceID: WIT$BRITISH BUTLER
+  customWitVoiceSettings:
+    SettingsId: 
+    PrependedText: 
+    AppendedText: 
+    voice: Charlie
+    style: default
+    speed: 100
+    pitch: 100
+  verboseLogging: 0
+--- !u!114 &1367173765
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367173756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b3124b830442d45b9f357ff99b152f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Meta.WitAi.TTS::Meta.WitAi.TTS.Integrations.TTSWit
+  verboseLogging: 0
+  _audioSystem: {fileID: 1367173766}
+  _runtimeCacheHandler: {fileID: 1367173767}
+  _diskCacheHandler: {fileID: 1367173768}
+  _events:
+    OnClipCreated:
+      m_PersistentCalls:
+        m_Calls: []
+    OnClipUnloaded:
+      m_PersistentCalls:
+        m_Calls: []
+    WebRequest:
+      OnRequestBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      OnRequestCancel:
+        m_PersistentCalls:
+          m_Calls: []
+      OnRequestError:
+        m_PersistentCalls:
+          m_Calls: []
+      OnRequestFirstResponse:
+        m_PersistentCalls:
+          m_Calls: []
+      OnRequestReady:
+        m_PersistentCalls:
+          m_Calls: []
+      OnRequestComplete:
+        m_PersistentCalls:
+          m_Calls: []
+    Stream:
+      OnStreamBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      OnStreamReady:
+        m_PersistentCalls:
+          m_Calls: []
+      OnStreamClipUpdate:
+        m_PersistentCalls:
+          m_Calls: []
+      OnStreamComplete:
+        m_PersistentCalls:
+          m_Calls: []
+      OnStreamCancel:
+        m_PersistentCalls:
+          m_Calls: []
+      OnStreamError:
+        m_PersistentCalls:
+          m_Calls: []
+    Download:
+      OnDownloadBegin:
+        m_PersistentCalls:
+          m_Calls: []
+      OnDownloadSuccess:
+        m_PersistentCalls:
+          m_Calls: []
+      OnDownloadCancel:
+        m_PersistentCalls:
+          m_Calls: []
+      OnDownloadError:
+        m_PersistentCalls:
+          m_Calls: []
+  RequestSettings:
+    _configuration: {fileID: 11400000, guid: 93128a042fba4394f8faefbd25a50ed4, type: 2}
+    audioType: 1
+    audioStream: 1
+    useEvents: 1
+    maxConcurrentRequests: -1
+    audioStreamPreloadCount: 5
+    audioReadyDuration: 1.5
+    audioMaxDuration: 15
+  _presetVoiceSettings:
+  - SettingsId: WIT$BRITISH BUTLER
+    PrependedText: 
+    AppendedText: 
+    voice: wit$British Butler
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$CAEL
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Cael
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$CAM
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Cam
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$CARL
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Carl
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$CARTOON BABY
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Cartoon Baby
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$CARTOON KID
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Cartoon Kid
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$CARTOON VILLAIN
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Cartoon Villain
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$CHARLIE
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Charlie
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$COCKNEY ACCENT
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Cockney Accent
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$CODY
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Cody
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$COLIN
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Colin
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$CONNOR
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Connor
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$COOPER
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Cooper
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$DISAFFECTED
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Disaffected
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$HOLLYWOOD
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Hollywood
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$KENYAN ACCENT
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Kenyan Accent
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$OVERCONFIDENT
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Overconfident
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$PIRATE
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Pirate
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$PROSPECTOR
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Prospector
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$RAILEY
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Railey
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$REBECCA
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Rebecca
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$REMI
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Remi
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$ROSIE
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Rosie
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$RUBIE
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Rubie
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$SOUTHERN ACCENT
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Southern Accent
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$SURFER
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Surfer
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$TRENDY
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Trendy
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$VAMPIRE
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Vampire
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$WHIMSICAL
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Whimsical
+    style: default
+    speed: 100
+    pitch: 100
+  - SettingsId: WIT$WIZARD
+    PrependedText: 
+    AppendedText: 
+    voice: wit$Wizard
+    style: default
+    speed: 100
+    pitch: 100
+--- !u!114 &1367173766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367173756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed480b991f99f2d4b8bcbe45568be37e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Meta.WitAi::Meta.Voice.Audio.UnityAudioSystem
+--- !u!114 &1367173767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367173756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d60dcb6d02034b4b96284db469db5e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Meta.WitAi.TTS::Meta.WitAi.TTS.Integrations.TTSRuntimeLRUCache
+  ClipLimit: 0
+  ClipCapacity: 5
+  RamLimit: 1
+  RamCapacity: 3600
+--- !u!114 &1367173768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367173756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ffdd015bcb8ea41bb96f19a723bf7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Meta.WitAi.TTS::Meta.WitAi.TTS.Integrations.TTSDiskCache
+  _diskPath: TTS/
+  _defaultSettings:
+    DiskCacheLocation: 0
+    StreamFromDisk: 0
+    StreamBufferLength: 5
 --- !u!1 &1367579983 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1414340063534579969, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
@@ -10855,7 +11135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
   stepToTrigger: 6
-  narrationClip: {fileID: 0}
   narrationID: JPM
 --- !u!65 &1371000157
 BoxCollider:
@@ -11121,50 +11400,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2856533739548161040, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
---- !u!1 &1423789025
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1423789027}
-  - component: {fileID: 1423789026}
-  m_Layer: 0
-  m_Name: TourTestTTS
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1423789026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423789025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0dcdd68d79ec174faaa2adc21e3c1b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TourTest_TTS
---- !u!4 &1423789027
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1423789025}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -139.6134, y: -2.79335, z: -106.79626}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 524464148}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1428388428 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3829659304444077678, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
@@ -11478,7 +11713,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
   stepToTrigger: 0
-  narrationClip: {fileID: 0}
   narrationID: Airlock
 --- !u!65 &1458665155
 BoxCollider:
@@ -12053,7 +12287,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
   stepToTrigger: 5
-  narrationClip: {fileID: 0}
   narrationID: Columbus
 --- !u!65 &1527234376
 BoxCollider:
@@ -12750,381 +12983,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1771576191}
   m_SourcePrefab: {fileID: 100100000, guid: 65847589f926b734d9eaed6e25f0046b, type: 3}
---- !u!1 &1656967586
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1656967591}
-  - component: {fileID: 1656967587}
-  - component: {fileID: 1656967590}
-  - component: {fileID: 1656967589}
-  - component: {fileID: 1656967588}
-  m_Layer: 0
-  m_Name: TTSWitService
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1656967587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656967586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6b3124b830442d45b9f357ff99b152f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Meta.WitAi.TTS::Meta.WitAi.TTS.Integrations.TTSWit
-  verboseLogging: 0
-  _audioSystem: {fileID: 0}
-  _runtimeCacheHandler: {fileID: 0}
-  _diskCacheHandler: {fileID: 0}
-  _events:
-    OnClipCreated:
-      m_PersistentCalls:
-        m_Calls: []
-    OnClipUnloaded:
-      m_PersistentCalls:
-        m_Calls: []
-    WebRequest:
-      OnRequestBegin:
-        m_PersistentCalls:
-          m_Calls: []
-      OnRequestCancel:
-        m_PersistentCalls:
-          m_Calls: []
-      OnRequestError:
-        m_PersistentCalls:
-          m_Calls: []
-      OnRequestFirstResponse:
-        m_PersistentCalls:
-          m_Calls: []
-      OnRequestReady:
-        m_PersistentCalls:
-          m_Calls: []
-      OnRequestComplete:
-        m_PersistentCalls:
-          m_Calls: []
-    Stream:
-      OnStreamBegin:
-        m_PersistentCalls:
-          m_Calls: []
-      OnStreamReady:
-        m_PersistentCalls:
-          m_Calls: []
-      OnStreamClipUpdate:
-        m_PersistentCalls:
-          m_Calls: []
-      OnStreamComplete:
-        m_PersistentCalls:
-          m_Calls: []
-      OnStreamCancel:
-        m_PersistentCalls:
-          m_Calls: []
-      OnStreamError:
-        m_PersistentCalls:
-          m_Calls: []
-    Download:
-      OnDownloadBegin:
-        m_PersistentCalls:
-          m_Calls: []
-      OnDownloadSuccess:
-        m_PersistentCalls:
-          m_Calls: []
-      OnDownloadCancel:
-        m_PersistentCalls:
-          m_Calls: []
-      OnDownloadError:
-        m_PersistentCalls:
-          m_Calls: []
-  RequestSettings:
-    _configuration: {fileID: 11400000, guid: 93128a042fba4394f8faefbd25a50ed4, type: 2}
-    audioType: 1
-    audioStream: 1
-    useEvents: 1
-    maxConcurrentRequests: -1
-    audioStreamPreloadCount: 5
-    audioReadyDuration: 1.5
-    audioMaxDuration: 15
-  _presetVoiceSettings:
-  - SettingsId: WIT$BRITISH BUTLER
-    PrependedText: 
-    AppendedText: 
-    voice: wit$British Butler
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$CAEL
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Cael
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$CAM
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Cam
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$CARL
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Carl
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$CARTOON BABY
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Cartoon Baby
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$CARTOON KID
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Cartoon Kid
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$CARTOON VILLAIN
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Cartoon Villain
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$CHARLIE
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Charlie
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$COCKNEY ACCENT
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Cockney Accent
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$CODY
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Cody
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$COLIN
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Colin
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$CONNOR
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Connor
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$COOPER
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Cooper
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$DISAFFECTED
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Disaffected
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$HOLLYWOOD
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Hollywood
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$KENYAN ACCENT
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Kenyan Accent
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$OVERCONFIDENT
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Overconfident
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$PIRATE
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Pirate
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$PROSPECTOR
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Prospector
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$RAILEY
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Railey
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$REBECCA
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Rebecca
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$REMI
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Remi
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$ROSIE
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Rosie
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$RUBIE
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Rubie
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$SOUTHERN ACCENT
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Southern Accent
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$SURFER
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Surfer
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$TRENDY
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Trendy
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$VAMPIRE
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Vampire
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$WHIMSICAL
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Whimsical
-    style: default
-    speed: 100
-    pitch: 100
-  - SettingsId: WIT$WIZARD
-    PrependedText: 
-    AppendedText: 
-    voice: wit$Wizard
-    style: default
-    speed: 100
-    pitch: 100
---- !u!114 &1656967588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656967586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09f6cedd5ecfc3b46aedeaec2ca367fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Meta.WitAi::Meta.Voice.Net.WebSockets.WitWebSocketAdapter
-  _webSocketProvider: {fileID: 0}
---- !u!114 &1656967589
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656967586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0ffdd015bcb8ea41bb96f19a723bf7d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Meta.WitAi.TTS::Meta.WitAi.TTS.Integrations.TTSDiskCache
-  _diskPath: TTS/
-  _defaultSettings:
-    DiskCacheLocation: 0
-    StreamFromDisk: 0
-    StreamBufferLength: 5
---- !u!114 &1656967590
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656967586}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d60dcb6d02034b4b96284db469db5e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Meta.WitAi.TTS::Meta.WitAi.TTS.Integrations.TTSRuntimeLRUCache
-  ClipLimit: 0
-  ClipCapacity: 5
-  RamLimit: 1
-  RamCapacity: 3600
---- !u!4 &1656967591
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1656967586}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 711628290}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1664723268 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7340670981213902021, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
@@ -13562,7 +13420,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomTrigger
   stepToTrigger: 3
-  narrationClip: {fileID: 0}
   narrationID: Cupola
 --- !u!65 &1723241129
 BoxCollider:
@@ -14478,7 +14335,7 @@ GameObject:
   - component: {fileID: 1905282424}
   m_Layer: 0
   m_Name: XR Origin (VR)
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15804,6 +15661,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2125462836}
   - component: {fileID: 2125462835}
+  - component: {fileID: 2125462840}
+  - component: {fileID: 2125462839}
   - component: {fileID: 2125462838}
   - component: {fileID: 2125462837}
   m_Layer: 0
@@ -15885,6 +15744,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: Unity.XR.Interaction.Toolkit::UnityEngine.XR.Interaction.Toolkit.Inputs.InputActionManager
   m_ActionAssets:
   - {fileID: -944628639613478452, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+--- !u!54 &2125462839
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125462833}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &2125462840
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2125462833}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2138632109
 GameObject:
   m_ObjectHideFlags: 0
@@ -15914,6 +15823,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 799065982}
   - {fileID: 901504085}
   - {fileID: 1614329102}
   - {fileID: 1631880534}
@@ -16076,6 +15986,6 @@ SceneRoots:
   - {fileID: 749496457}
   - {fileID: 2138632110}
   - {fileID: 2125462836}
-  - {fileID: 711628290}
+  - {fileID: 1367173761}
   - {fileID: 98777757}
   - {fileID: 1879847783}

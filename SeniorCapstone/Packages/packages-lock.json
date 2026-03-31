@@ -82,7 +82,7 @@
     },
     "com.meta.xr.sdk.voice": {
       "version": "85.0.0",
-      "depth": 1,
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
