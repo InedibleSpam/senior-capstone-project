@@ -9,7 +9,7 @@ public class TourManager : MonoBehaviour
     public GameObject[] stepArrows;     // One arrow/path per step
     public Collider[] lockedDoors;      // Doors that block progress
     public AudioSource narration;       // Current narration
-
+    public TourTest_TTS ttsSpeaker;     // Reference to TTS component
     private void Awake()
     {
         Instance = this;
@@ -58,12 +58,25 @@ public class TourManager : MonoBehaviour
         }
     }
 
-    public void PlayNarration(AudioClip clip)
+    public void PlayNarration(string id)
+{
+    if (ttsSpeaker == null)
     {
-        narration.clip = clip;
-        narration.Play();
-        StartCoroutine(WaitForNarration());
+        Debug.LogError("TTS Speaker not assigned!");
+        return;
     }
+
+    ttsSpeaker.SpeakByID(id);
+
+    // TEMP: move to next step after delay
+    StartCoroutine(WaitAndAdvance());
+}
+
+System.Collections.IEnumerator WaitAndAdvance()
+{
+    yield return new WaitForSeconds(3f); // adjust per narration length
+    NextStep();
+}
 
     System.Collections.IEnumerator WaitForNarration()
     {
