@@ -6197,7 +6197,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -9094301576172658543, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
-<<<<<<< HEAD
 --- !u!1 &967991074
 GameObject:
   m_ObjectHideFlags: 0
@@ -6832,8 +6831,6 @@ MonoBehaviour:
     m_InputActionReference: {fileID: 0}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualValue: 0
-=======
->>>>>>> 20a97b7147b586cecbc2eda799001028d28a6798
 --- !u!1 &971604773 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7386059618703837135, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
@@ -7027,7 +7024,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -2957768600345960363, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
-<<<<<<< HEAD
 --- !u!1 &984213073
 GameObject:
   m_ObjectHideFlags: 0
@@ -7662,8 +7658,6 @@ MonoBehaviour:
     m_InputActionReference: {fileID: 0}
     m_ObjectReferenceObject: {fileID: 0}
     m_ManualValue: 0
-=======
->>>>>>> 20a97b7147b586cecbc2eda799001028d28a6798
 --- !u!1 &1021071653 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2472022708881466287, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
