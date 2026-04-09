@@ -7,6 +7,12 @@ public class TourManager : MonoBehaviour
 
     [Header("Tour State")]
     public int currentStep = 0;
+    private bool isWelcome = true;
+    private bool isFinished = false;
+
+    [Header("Narration IDs")]
+    public string welcomeNarrationID = "Welcome";
+    public string finishedNarrationID = "Finished";
 
     [Header("Arrows")]
     public GameObject[] stepArrows; // Step-based arrow groups
@@ -25,7 +31,7 @@ public class TourManager : MonoBehaviour
 
     void Start()
     {
-        UpdateStep();
+        PlayNarration(welcomeNarrationID);
     }
 
     // 🔊 Called by RoomTrigger
@@ -54,17 +60,39 @@ public class TourManager : MonoBehaviour
     {
         yield return new WaitForSeconds(4f); // ideally replace with TTS completion later
 
-        Debug.Log("➡️ Advancing step after narration");
+        Debug.Log("➡️ Advancing after narration");
 
         isNarrating = false;
 
-        NextStep();
+        if (isWelcome)
+        {
+            isWelcome = false;
+            currentStep = 0;
+            UpdateStep();
+        }
+        else if (isFinished)
+        {
+            // Tour finished, perhaps reset or do nothing
+            Debug.Log("Tour finished!");
+        }
+        else
+        {
+            NextStep();
+        }
     }
 
     public void NextStep()
     {
-        currentStep++;
-        UpdateStep();
+        if (currentStep + 1 >= stepArrows.Length)
+        {
+            isFinished = true;
+            PlayNarration(finishedNarrationID);
+        }
+        else
+        {
+            currentStep++;
+            UpdateStep();
+        }
     }
 
 void UpdateStep()
