@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ModuleNarration : MonoBehaviour
 {
-    public TTSSpeaker speaker; 
+    public TTSSpeaker speaker;
 
     [TextArea]
     public string narrationText;
@@ -12,15 +12,12 @@ public class ModuleNarration : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player") && !hasPlayed)
-        {
-            hasPlayed = true;
+        Debug.Log("Something entered: " + other.name);
 
-            if (speaker != null)
-            {
-                speaker.Stop(); 
-                speaker.Speak(narrationText);
-            }
+        if (other.CompareTag("Player"))
+        {
+            Debug.Log("PLAYER ENTERED TRIGGER");
+            speaker.Speak(narrationText);
         }
     }
 }
