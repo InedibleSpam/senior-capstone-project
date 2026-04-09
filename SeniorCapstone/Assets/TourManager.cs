@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class TourManager : MonoBehaviour
 {
@@ -15,10 +16,19 @@ public class TourManager : MonoBehaviour
     public string finishedNarrationID = "Finished";
 
     [Header("Arrows")]
-    public GameObject[] stepArrows; // Step-based arrow groups
+    public GameObject[] stepArrows;
+
+    [Header("Arrow Animation Settings")] // ⭐ NEW
+    public float floatHeight = 0.2f;
+    public float floatSpeed = 2f;
+    public float pulseSpeed = 2f;
+    public float emissionIntensity = 2f;
+    public Color emissionColor = Color.cyan;
+
+    private Dictionary<Transform, Vector3> arrowStartPositions = new Dictionary<Transform, Vector3>(); // ⭐ NEW
 
     [Header("Doors")]
-    public Collider[] lockedDoors; // Doors in order
+    public Collider[] lockedDoors;
 
     [Header("TTS")]
     public TourTest_TTS ttsSpeaker;
@@ -31,7 +41,13 @@ public class TourManager : MonoBehaviour
 
     void Start()
     {
+        CacheArrowStartPositions(); // ⭐ NEW
         PlayNarration(welcomeNarrationID);
+    }
+
+    void Update() // ⭐ NEW
+    {
+        AnimateActiveArrows();
     }
 
     // 🔊 Called by RoomTrigger
@@ -48,7 +64,7 @@ public class TourManager : MonoBehaviour
         isNarrating = true;
 
         StopAllCoroutines();
-        SetAllDoors(true); // LOCK ALL DOORS
+        SetAllDoors(true);
         SetAllArrows(false);
 
         ttsSpeaker.SpeakByID(id);
@@ -58,7 +74,7 @@ public class TourManager : MonoBehaviour
 
     IEnumerator WaitAndAdvance()
     {
-        yield return new WaitForSeconds(4f); // ideally replace with TTS completion later
+        yield return new WaitForSeconds(4f);
 
         Debug.Log("➡️ Advancing after narration");
 
@@ -72,7 +88,6 @@ public class TourManager : MonoBehaviour
         }
         else if (isFinished)
         {
-            // Tour finished, perhaps reset or do nothing
             Debug.Log("Tour finished!");
         }
         else
@@ -95,7 +110,7 @@ public class TourManager : MonoBehaviour
         }
     }
 
-void UpdateStep()
+    void UpdateStep()
     {
         Debug.Log("➡️ Updating to Step: " + currentStep);
 
@@ -105,12 +120,10 @@ void UpdateStep()
             {
                 if (lockedDoors[i] != null)
                 {
-                    // Unlock doors at (currentStep - 1) and (currentStep)
                     bool shouldUnlock =
                         (i == currentStep) ||
                         (i == currentStep - 1);
 
-                    // Lock everything else
                     lockedDoors[i].enabled = !shouldUnlock;
                 }
             }
@@ -134,14 +147,12 @@ void UpdateStep()
     {
         if (stepArrows == null) return;
 
-        // Turn OFF all arrows
         foreach (var arrow in stepArrows)
         {
             if (arrow != null)
                 arrow.SetActive(false);
         }
 
-        // Turn ON current step arrows
         if (currentStep < stepArrows.Length && stepArrows[currentStep] != null)
         {
             stepArrows[currentStep].SetActive(true);
@@ -156,6 +167,53 @@ void UpdateStep()
         {
             if (arrow != null)
                 arrow.SetActive(state);
+        }
+    }
+
+    // ⭐ NEW: Cache starting positions
+    void CacheArrowStartPositions()
+    {
+        foreach (var arrowGroup in stepArrows)
+        {
+            if (arrowGroup == null) continue;
+
+            foreach (Transform child in arrowGroup.transform)
+            {
+                arrowStartPositions[child] = child.position;
+            }
+        }
+    }
+
+    // ⭐ NEW: Animate arrows
+    void AnimateActiveArrows()
+    {
+        if (currentStep >= stepArrows.Length) return;
+
+        GameObject activeGroup = stepArrows[currentStep];
+        if (activeGroup == null) return;
+
+        foreach (Transform arrow in activeGroup.transform)
+        {
+            // FLOATING
+            if (arrowStartPositions.ContainsKey(arrow))
+            {
+                Vector3 startPos = arrowStartPositions[arrow];
+                float newY = startPos.y + Mathf.Sin(Time.time * floatSpeed) * floatHeight;
+                arrow.position = new Vector3(startPos.x, newY, startPos.z);
+            }
+
+            // EMISSION PULSE
+            Renderer rend = arrow.GetComponent<Renderer>();
+            if (rend != null)
+            {
+                Material mat = rend.material;
+
+                float emission = Mathf.PingPong(Time.time * pulseSpeed, emissionIntensity);
+                Color finalColor = emissionColor * emission;
+
+                mat.EnableKeyword("_EMISSION");
+                mat.SetColor("_EmissionColor", finalColor);
+            }
         }
     }
 }
