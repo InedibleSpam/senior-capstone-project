@@ -143,18 +143,6 @@ public class TourManager : MonoBehaviour
                         (i == currentStep) ||
                         (i == currentStep - 1);
 
-                    // Special case: doors 4 and 5 are connected (opposite ends of a hallway)
-                    // If either should be unlocked, unlock both
-                    if ((i == 4 || i == 5))
-                    {
-                        bool is4or5Active = (currentStep == 4 || currentStep == 5) || 
-                                            (currentStep - 1 == 4 || currentStep - 1 == 5);
-                        if (is4or5Active)
-                        {
-                            shouldUnlock = true;
-                        }
-                    }
-
                     lockedDoors[i].enabled = !shouldUnlock;
                 }
             }
