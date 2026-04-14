@@ -12,4 +12,9 @@ public class TitleScreenManager : MonoBehaviour
     {
         SceneManager.LoadScene("GuidedTourScene");
     }
+
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }
