@@ -758,6 +758,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TourManager
   currentStep: 0
+  welcomeNarrationID: Welcome
+  finishedNarrationID: Finished
   stepArrows:
   - {fileID: 799065981}
   - {fileID: 901504084}
@@ -767,6 +769,11 @@ MonoBehaviour:
   - {fileID: 1066228589}
   - {fileID: 120641953}
   - {fileID: 384581738}
+  floatHeight: 0.2
+  floatSpeed: 2
+  pulseSpeed: 2
+  emissionIntensity: 2
+  emissionColor: {r: 0, g: 1, b: 1, a: 1}
   lockedDoors:
   - {fileID: 760920990}
   - {fileID: 1174309707}
@@ -777,7 +784,7 @@ MonoBehaviour:
   - {fileID: 2142029076}
   - {fileID: 437950792}
   - {fileID: 170270321}
-  ttsSpeaker: {fileID: 1367173763}
+  ttsSpeaker: {fileID: 1367173769}
 --- !u!4 &98777757
 Transform:
   m_ObjectHideFlags: 0
@@ -2803,9 +2810,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 402904076}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -100.4, y: -2.4, z: -43.99}
-  m_LocalScale: {x: 41.60796, y: 0.5, z: 39.39019}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -100.4, y: -2.3999996, z: -43.99}
+  m_LocalScale: {x: 41.607952, y: 0.5, z: 39.39019}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 814590491}
@@ -10564,8 +10571,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1367173761}
   - component: {fileID: 1367173760}
+  - component: {fileID: 1367173769}
   - component: {fileID: 1367173765}
-  - component: {fileID: 1367173763}
   - component: {fileID: 1367173764}
   - component: {fileID: 1367173766}
   - component: {fileID: 1367173767}
@@ -10689,18 +10696,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1367173763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367173756}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c0dcdd68d79ec174faaa2adc21e3c1b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TourTest_TTS
 --- !u!114 &1367173764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11177,6 +11172,18 @@ MonoBehaviour:
     DiskCacheLocation: 0
     StreamFromDisk: 0
     StreamBufferLength: 5
+--- !u!114 &1367173769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1367173756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0dcdd68d79ec174faaa2adc21e3c1b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TourTest_TTS
 --- !u!1 &1367579983 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1414340063534579969, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
@@ -15153,8 +15160,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1983500050}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -4.1, y: -2.39, z: -43.99}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -4.1000004, y: -2.3899994, z: -43.99}
   m_LocalScale: {x: 30.784224, y: 0.5, z: 28.649494}
   m_ConstrainProportionsScale: 0
   m_Children: []
