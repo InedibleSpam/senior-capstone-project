@@ -2,126 +2,80 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovement : MonoBehaviour
+public class RealisticSpaceMovement : MonoBehaviour
 {
-    [Header("Movement")]
-    public float horizontalSpeed = 8f;
-    public float verticalSpeedMultiplier = 0.6f;
-    [Tooltip("Horizontal acceleration (units/sec^2)")]
-    public float acceleration = 30f;
-    [Tooltip("Horizontal deceleration (units/sec^2)")]
-    public float deceleration = 40f;
-
-
-    [Header("Input")]
-    public InputActionAsset inputActions;
+    [Header("Thruster Settings")]
+    public float thrustAcceleration = 10f; // How fast you gain speed
+    public float maxSpeed = 5f;
+    
+    [Header("Physics (The 'Feel')")]
+    [Range(0.1f, 10f)]
+    public float drag = 2f;            // How fast you naturally slow down
+    public float rotationSmoothing = 5f; // Higher = Snappier, Lower = Floatier
 
     [Header("References")]
+    public InputActionAsset inputActions;
     public Transform cameraTransform;
 
     private CharacterController controller;
     private InputActionMap playerActionMap;
-
-    private Vector2 moveInput;            // Left stick (horizontal movement)
-    private Vector2 verticalStickInput;   // Right stick (vertical movement)
-    // Smoothed horizontal velocity in world space (xz plane)
-    private Vector3 currentHorizontalVelocity = Vector3.zero;
+    
+    private Vector2 moveInput;
+    private Vector2 rotateInput;
+    private Vector3 worldVelocity;
+    private float rotationVelocity;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
-
-        if (inputActions == null)
-        {
-            Debug.LogError("InputActionAsset not assigned!");
-            return;
-        }
-
         playerActionMap = inputActions.FindActionMap("Player");
-        if (playerActionMap == null)
-        {
-            Debug.LogError("'Player' action map not found!");
-            return;
-        }
-
         playerActionMap.Enable();
 
-        // Horizontal movement (left stick)
-        var moveAction = playerActionMap.FindAction("Move");
-        if (moveAction != null)
-        {
-            moveAction.performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-            moveAction.canceled += ctx => moveInput = Vector2.zero;
-        }
-        else
-        {
-            Debug.LogWarning("'Move' action not found!");
-        }
+        playerActionMap.FindAction("Move").performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+        playerActionMap.FindAction("Move").canceled += ctx => moveInput = Vector2.zero;
 
-        // Vertical movement (right stick Y)
-        var verticalMoveAction = playerActionMap.FindAction("VerticalMove");
-        if (verticalMoveAction != null)
-        {
-            verticalMoveAction.performed += ctx => verticalStickInput = ctx.ReadValue<Vector2>();
-            verticalMoveAction.canceled += ctx => verticalStickInput = Vector2.zero;
-        }
-        else
-        {
-            Debug.LogWarning("'VerticalMove' action not found!");
-        }
-
-        // Auto-find camera if not assigned
-        if (cameraTransform == null)
-        {
-            cameraTransform = GetComponentInChildren<Camera>()?.transform;
-            if (cameraTransform == null)
-            {
-                Debug.LogWarning("Camera not found! Assign Camera Transform manually.");
-            }
-        }
+        playerActionMap.FindAction("VerticalMove").performed += ctx => rotateInput = ctx.ReadValue<Vector2>();
+        playerActionMap.FindAction("VerticalMove").canceled += ctx => rotateInput = Vector2.zero;
     }
 
     void Update()
     {
-        if (cameraTransform == null || controller == null)
-            return;
-
-        // Head-relative forward and right (flattened)
-        Vector3 camForward = cameraTransform.forward;
-        camForward.y = 0f;
-        camForward.Normalize();
-
-        Vector3 camRight = cameraTransform.right;
-        camRight.y = 0f;
-        camRight.Normalize();
-
-        // Vertical input with comfort scaling
-        float verticalInput = Mathf.Clamp(verticalStickInput.y, -1f, 1f);
-        float verticalSpeed = horizontalSpeed * verticalSpeedMultiplier;
-
-        // Desired horizontal velocity in world space (xz plane)
-        Vector3 desiredHorizontal = (camRight * moveInput.x + camForward * moveInput.y) * horizontalSpeed;
-
-        // Choose accel vs decel based on whether we're increasing speed
-        float currentSpeed = currentHorizontalVelocity.magnitude;
-        float desiredSpeed = desiredHorizontal.magnitude;
-        bool accelerating = desiredSpeed > currentSpeed + 0.001f;
-
-        float maxDelta = (accelerating ? acceleration : deceleration) * Time.deltaTime;
-
-        // Smoothly move current horizontal velocity toward desired
-        currentHorizontalVelocity = Vector3.MoveTowards(currentHorizontalVelocity, desiredHorizontal, maxDelta);
-
-        Vector3 move = currentHorizontalVelocity + Vector3.up * verticalInput * verticalSpeed;
-
-        controller.Move(move * Time.deltaTime);
+        HandleRotation();
+        HandlePhysicsMovement();
     }
 
-    void OnDestroy()
+    void HandleRotation()
     {
-        if (playerActionMap != null)
+        // Smooth rotation that feels like rotating a heavy object
+        float targetRotSpeed = rotateInput.x * 60f; 
+        rotationVelocity = Mathf.Lerp(rotationVelocity, targetRotSpeed, Time.deltaTime * rotationSmoothing);
+        transform.Rotate(0, rotationVelocity * Time.deltaTime, 0);
+    }
+
+    void HandlePhysicsMovement()
+    {
+        // 1. Get input direction relative to where you are looking
+        Vector3 inputDir = (cameraTransform.right * moveInput.x) + (cameraTransform.forward * moveInput.y);
+        
+        // Include vertical drift if you want the right stick Y to control Up/Down
+        inputDir += transform.up * rotateInput.y;
+
+        // 2. Apply Acceleration
+        if (inputDir.magnitude > 0.1f)
         {
-            playerActionMap.Disable();
+            // Pushing the stick adds velocity
+            worldVelocity += inputDir * thrustAcceleration * Time.deltaTime;
         }
+
+        // 3. Apply Drag (The "Exponential Decay")
+        // This is the secret sauce: it reduces velocity by a percentage every frame
+        // rather than a fixed amount, leading to a smooth, realistic stop.
+        worldVelocity = Vector3.Lerp(worldVelocity, Vector3.zero, drag * Time.deltaTime);
+
+        // 4. Clamp speed so you don't become a rocket
+        worldVelocity = Vector3.ClampMagnitude(worldVelocity, maxSpeed);
+
+        // 5. Final Move
+        controller.Move(worldVelocity * Time.deltaTime);
     }
 }

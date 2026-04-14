@@ -10,14 +10,14 @@ public class TTSScript : MonoBehaviour
         // Automatically find TTSSpeaker on the same GameObject
         speaker = GetComponent<TTSSpeaker>();
 
-        if (speaker != null)
-        {
-            speaker.Speak("Hello. If you hear this, text to speech is working.");
-        }
-        else
-        {
-            Debug.LogError("TTSSpeaker component not found on this GameObject!");
-        }
+        // if (speaker != null)
+        // {
+        //     speaker.Speak("Hello. If you hear this, text to speech is working.");
+        // }
+        // else
+        // {
+        //     Debug.LogError("TTSSpeaker component not found on this GameObject!");
+        // }
     }
       public void SpeakPatches()
     {

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Meta.WitAi.TTS.Utilities;
 
-public class TourTest_TTS : MonoBehaviour
+public class Free_Roam_TTS : MonoBehaviour
 {
     private TTSSpeaker speaker;
 
