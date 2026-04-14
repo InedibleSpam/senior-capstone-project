@@ -14,10 +14,11 @@ public class ModuleNarration : MonoBehaviour
     {
         Debug.Log("Something entered: " + other.name);
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !hasPlayed)
         {
             Debug.Log("PLAYER ENTERED TRIGGER");
             speaker.Speak(narrationText);
+            hasPlayed = true;
         }
     }
 }
