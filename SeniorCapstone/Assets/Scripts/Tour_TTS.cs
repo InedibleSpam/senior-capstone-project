@@ -27,7 +27,9 @@ public class TourTest_TTS : MonoBehaviour
             { "US_Lab", "This is the US Lab Module." },
             { "Columbus", "This is the Columbus Module." },
             { "JPM", "This is the JPM Module." },
-            { "JLP", "This is the JLP Module." }
+            { "JLP", "This is the JLP Module." },
+            { "Welcome", "Welcome to the International Space Station Guided Tour! Follow the arrows to explore different modules and learn about life in space." },
+            { "Finished", "The Guided Tour is now complete! We hope you enjoyed exploring the International Space Station. You can either restart the tour, or choose to enter Free Roam mode to explore on your own. Thank you for visiting!" }
         };
     }
 

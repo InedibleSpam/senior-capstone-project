@@ -1,18 +1,45 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class TourManager : MonoBehaviour
 {
     public static TourManager Instance;
 
+    [Header("VR UI Positioning")]
+    public Transform playerCamera; // XR Rig Camera
+    public float uiDistance = 2f;
+    public float verticalOffset = -0.2f;
+
     [Header("Tour State")]
     public int currentStep = 0;
+    private bool isWelcome = true;
+    private bool isFinished = false;
+
+    [Header("Narration IDs")]
+    public string welcomeNarrationID = "Welcome";
+    public string finishedNarrationID = "Finished";
 
     [Header("Arrows")]
-    public GameObject[] stepArrows; // Step-based arrow groups
+    public GameObject[] stepArrows;
+
+    [Header("Arrow Animation Settings")] // ⭐ NEW
+    public float floatHeight = 0.2f;
+    public float floatSpeed = 2f;
+    public float pulseSpeed = 2f;
+    public float emissionIntensity = 2f;
+    public Color emissionColor = Color.cyan;
+
+    private Dictionary<Transform, Vector3> arrowStartPositions = new Dictionary<Transform, Vector3>(); // ⭐ NEW
 
     [Header("Doors")]
-    public Collider[] lockedDoors; // Doors in order
+    public Collider[] lockedDoors;
+
+    [Header("End UI")]
+    public GameObject endScreenUI;
+    public CanvasGroup endScreenCanvasGroup; // ⭐ NEW
+    public float fadeDuration = 1f;
 
     [Header("TTS")]
     public TourTest_TTS ttsSpeaker;
@@ -25,12 +52,24 @@ public class TourManager : MonoBehaviour
 
     void Start()
     {
-        UpdateStep();
+        CacheArrowStartPositions(); // ⭐ NEW
+        PlayNarration(welcomeNarrationID);
+    }
+
+    void Update() // ⭐ NEW
+    {
+        AnimateActiveArrows();
     }
 
     // 🔊 Called by RoomTrigger
     public void PlayNarration(string id)
     {
+        if (isNarrating)
+        {
+            Debug.Log("🔊 Narration already in progress, skipping: " + id);
+            return;
+        }
+
         if (ttsSpeaker == null)
         {
             Debug.LogError("TTS Speaker not assigned!");
@@ -42,7 +81,7 @@ public class TourManager : MonoBehaviour
         isNarrating = true;
 
         StopAllCoroutines();
-        SetAllDoors(true); // LOCK ALL DOORS
+        SetAllDoors(true);
         SetAllArrows(false);
 
         ttsSpeaker.SpeakByID(id);
@@ -52,22 +91,45 @@ public class TourManager : MonoBehaviour
 
     IEnumerator WaitAndAdvance()
     {
-        yield return new WaitForSeconds(4f); // ideally replace with TTS completion later
+        yield return new WaitForSeconds(4f);
 
-        Debug.Log("➡️ Advancing step after narration");
+        Debug.Log("➡️ Advancing after narration");
 
         isNarrating = false;
 
-        NextStep();
+        if (isWelcome)
+        {
+            isWelcome = false;
+            currentStep = 0;
+            UpdateStep();
+        }
+        else if (isFinished)
+        {
+            Debug.Log("🎉 Tour finished!");
+
+            OnTourFinished(); // ⭐ ADD THIS
+        }
+        else
+        {
+            NextStep();
+        }
     }
 
     public void NextStep()
     {
-        currentStep++;
-        UpdateStep();
+        if (currentStep + 1 >= stepArrows.Length)
+        {
+            isFinished = true;
+            PlayNarration(finishedNarrationID);
+        }
+        else
+        {
+            currentStep++;
+            UpdateStep();
+        }
     }
 
-void UpdateStep()
+    void UpdateStep()
     {
         Debug.Log("➡️ Updating to Step: " + currentStep);
 
@@ -77,12 +139,22 @@ void UpdateStep()
             {
                 if (lockedDoors[i] != null)
                 {
-                    // Unlock doors at (currentStep - 1) and (currentStep)
                     bool shouldUnlock =
                         (i == currentStep) ||
                         (i == currentStep - 1);
 
-                    // Lock everything else
+                    // Special case: doors 4 and 5 are connected (opposite ends of a hallway)
+                    // If either should be unlocked, unlock both
+                    if ((i == 4 || i == 5))
+                    {
+                        bool is4or5Active = (currentStep == 4 || currentStep == 5) || 
+                                            (currentStep - 1 == 4 || currentStep - 1 == 5);
+                        if (is4or5Active)
+                        {
+                            shouldUnlock = true;
+                        }
+                    }
+
                     lockedDoors[i].enabled = !shouldUnlock;
                 }
             }
@@ -106,14 +178,12 @@ void UpdateStep()
     {
         if (stepArrows == null) return;
 
-        // Turn OFF all arrows
         foreach (var arrow in stepArrows)
         {
             if (arrow != null)
                 arrow.SetActive(false);
         }
 
-        // Turn ON current step arrows
         if (currentStep < stepArrows.Length && stepArrows[currentStep] != null)
         {
             stepArrows[currentStep].SetActive(true);
@@ -129,5 +199,138 @@ void UpdateStep()
             if (arrow != null)
                 arrow.SetActive(state);
         }
+    }
+
+    // ⭐ NEW: Cache starting positions
+    void CacheArrowStartPositions()
+    {
+        foreach (var arrowGroup in stepArrows)
+        {
+            if (arrowGroup == null) continue;
+
+            foreach (Transform child in arrowGroup.transform)
+            {
+                arrowStartPositions[child] = child.position;
+            }
+        }
+    }
+
+    // ⭐ NEW: Animate arrows
+    void AnimateActiveArrows()
+    {
+        if (currentStep >= stepArrows.Length) return;
+
+        GameObject activeGroup = stepArrows[currentStep];
+        if (activeGroup == null) return;
+
+        foreach (Transform arrow in activeGroup.transform)
+        {
+            // FLOATING
+            if (arrowStartPositions.ContainsKey(arrow))
+            {
+                Vector3 startPos = arrowStartPositions[arrow];
+                float newY = startPos.y + Mathf.Sin(Time.time * floatSpeed) * floatHeight;
+                arrow.position = new Vector3(startPos.x, newY, startPos.z);
+            }
+
+            // EMISSION PULSE
+            Renderer rend = arrow.GetComponent<Renderer>();
+            if (rend != null)
+            {
+                Material mat = rend.material;
+
+                float emission = Mathf.PingPong(Time.time * pulseSpeed, emissionIntensity);
+                Color finalColor = emissionColor * emission;
+
+                mat.EnableKeyword("_EMISSION");
+                mat.SetColor("_EmissionColor", finalColor);
+            }
+        }
+    }
+
+    void PositionEndScreen()
+    {
+        if (playerCamera == null || endScreenUI == null) return;
+
+        // Position in front of player
+        Vector3 forward = playerCamera.forward;
+        Vector3 position = playerCamera.position + forward * uiDistance;
+
+        // Optional vertical adjustment (slightly lower than eye level)
+        position.y += verticalOffset;
+
+        endScreenUI.transform.position = position;
+
+        // Make UI face the player
+        endScreenUI.transform.LookAt(playerCamera);
+
+        // Flip it so it's not backwards
+        endScreenUI.transform.forward *= -1f;
+    }
+
+    IEnumerator FadeInEndScreen()
+    {
+        float time = 0f;
+        endScreenCanvasGroup.alpha = 0f;
+        endScreenUI.transform.localScale = Vector3.one * 0.8f;
+
+        // Disable interaction during fade
+        endScreenCanvasGroup.interactable = false;
+        endScreenCanvasGroup.blocksRaycasts = false;
+
+        while (time < fadeDuration)
+        {
+            time += Time.deltaTime;
+            endScreenCanvasGroup.alpha = time / fadeDuration;
+            endScreenUI.transform.localScale = Vector3.Lerp(
+                Vector3.one * 0.8f,
+                Vector3.one,
+                time / fadeDuration
+            );
+            yield return null;
+        }
+
+        endScreenCanvasGroup.alpha = 1f;
+        endScreenUI.transform.localScale = Vector3.one;
+
+        // Enable interaction after fade
+        endScreenCanvasGroup.interactable = true;
+        endScreenCanvasGroup.blocksRaycasts = true;
+    }
+
+    void OnTourFinished()
+    {
+        SetAllDoors(true);
+        SetAllArrows(false);
+
+        PositionEndScreen(); 
+
+        if (endScreenUI != null)
+            endScreenUI.SetActive(true);
+
+        if (endScreenCanvasGroup != null)
+            StartCoroutine(FadeInEndScreen());
+    }
+
+    public void RestartTour()
+    {
+        Debug.Log("🔄 Restarting tour");
+
+        currentStep = 0;
+        isWelcome = true;
+        isFinished = false;
+
+        if (endScreenUI != null)
+            endScreenUI.SetActive(false);
+
+        if (endScreenCanvasGroup != null)
+            endScreenCanvasGroup.alpha = 0f;
+
+        PlayNarration(welcomeNarrationID);
+    }
+
+    public void ReturnToTitle()
+    {
+        SceneManager.LoadScene("TitleScreen");
     }
 }
