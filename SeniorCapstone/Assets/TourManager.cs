@@ -1,10 +1,16 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 
 public class TourManager : MonoBehaviour
 {
     public static TourManager Instance;
+
+    [Header("VR UI Positioning")]
+    public Transform playerCamera; // XR Rig Camera
+    public float uiDistance = 2f;
+    public float verticalOffset = -0.2f;
 
     [Header("Tour State")]
     public int currentStep = 0;
@@ -30,6 +36,11 @@ public class TourManager : MonoBehaviour
     [Header("Doors")]
     public Collider[] lockedDoors;
 
+    [Header("End UI")]
+    public GameObject endScreenUI;
+    public CanvasGroup endScreenCanvasGroup; // ⭐ NEW
+    public float fadeDuration = 1f;
+
     [Header("TTS")]
     public TourTest_TTS ttsSpeaker;
     private bool isNarrating = false;
@@ -53,6 +64,12 @@ public class TourManager : MonoBehaviour
     // 🔊 Called by RoomTrigger
     public void PlayNarration(string id)
     {
+        if (isNarrating)
+        {
+            Debug.Log("🔊 Narration already in progress, skipping: " + id);
+            return;
+        }
+
         if (ttsSpeaker == null)
         {
             Debug.LogError("TTS Speaker not assigned!");
@@ -88,7 +105,9 @@ public class TourManager : MonoBehaviour
         }
         else if (isFinished)
         {
-            Debug.Log("Tour finished!");
+            Debug.Log("🎉 Tour finished!");
+
+            OnTourFinished(); // ⭐ ADD THIS
         }
         else
         {
@@ -227,5 +246,91 @@ public class TourManager : MonoBehaviour
                 mat.SetColor("_EmissionColor", finalColor);
             }
         }
+    }
+
+    void PositionEndScreen()
+    {
+        if (playerCamera == null || endScreenUI == null) return;
+
+        // Position in front of player
+        Vector3 forward = playerCamera.forward;
+        Vector3 position = playerCamera.position + forward * uiDistance;
+
+        // Optional vertical adjustment (slightly lower than eye level)
+        position.y += verticalOffset;
+
+        endScreenUI.transform.position = position;
+
+        // Make UI face the player
+        endScreenUI.transform.LookAt(playerCamera);
+
+        // Flip it so it's not backwards
+        endScreenUI.transform.forward *= -1f;
+    }
+
+    IEnumerator FadeInEndScreen()
+    {
+        float time = 0f;
+        endScreenCanvasGroup.alpha = 0f;
+        endScreenUI.transform.localScale = Vector3.one * 0.8f;
+
+        // Disable interaction during fade
+        endScreenCanvasGroup.interactable = false;
+        endScreenCanvasGroup.blocksRaycasts = false;
+
+        while (time < fadeDuration)
+        {
+            time += Time.deltaTime;
+            endScreenCanvasGroup.alpha = time / fadeDuration;
+            endScreenUI.transform.localScale = Vector3.Lerp(
+                Vector3.one * 0.8f,
+                Vector3.one,
+                time / fadeDuration
+            );
+            yield return null;
+        }
+
+        endScreenCanvasGroup.alpha = 1f;
+        endScreenUI.transform.localScale = Vector3.one;
+
+        // Enable interaction after fade
+        endScreenCanvasGroup.interactable = true;
+        endScreenCanvasGroup.blocksRaycasts = true;
+    }
+
+    void OnTourFinished()
+    {
+        SetAllDoors(true);
+        SetAllArrows(false);
+
+        PositionEndScreen(); 
+
+        if (endScreenUI != null)
+            endScreenUI.SetActive(true);
+
+        if (endScreenCanvasGroup != null)
+            StartCoroutine(FadeInEndScreen());
+    }
+
+    public void RestartTour()
+    {
+        Debug.Log("🔄 Restarting tour");
+
+        currentStep = 0;
+        isWelcome = true;
+        isFinished = false;
+
+        if (endScreenUI != null)
+            endScreenUI.SetActive(false);
+
+        if (endScreenCanvasGroup != null)
+            endScreenCanvasGroup.alpha = 0f;
+
+        PlayNarration(welcomeNarrationID);
+    }
+
+    public void ReturnToTitle()
+    {
+        SceneManager.LoadScene("TitleScreen");
     }
 }
