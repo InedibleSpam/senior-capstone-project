@@ -214,7 +214,7 @@ MonoBehaviour:
   m_SetLineColorGradient: 1
   m_ValidColorGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0.28235295, g: 0.70980394, b: 1, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -239,7 +239,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_ColorSpace: -1
+    m_ColorSpace: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   m_InvalidColorGradient:
@@ -1737,10 +1737,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cf10683739ad4d409114acdfb15d4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  horizontalSpeed: 8
-  verticalSpeedMultiplier: 0.6
-  acceleration: 30
-  deceleration: 40
+  thrustAcceleration: 10
+  maxSpeed: 5
+  drag: 2
+  rotationSmoothing: 5
   inputActions: {fileID: -944628639613478452, guid: 84c32709bba4ac747ae62d8dab799ef9, type: 3}
   cameraTransform: {fileID: 1272751235}
 --- !u!143 &592749820
@@ -4135,7 +4135,7 @@ MonoBehaviour:
   m_SetLineColorGradient: 1
   m_ValidColorGradient:
     serializedVersion: 2
-    key0: {r: 1, g: 1, b: 1, a: 1}
+    key0: {r: 0.28235295, g: 0.70980394, b: 1, a: 1}
     key1: {r: 1, g: 1, b: 1, a: 1}
     key2: {r: 0, g: 0, b: 0, a: 0}
     key3: {r: 0, g: 0, b: 0, a: 0}
@@ -4160,7 +4160,7 @@ MonoBehaviour:
     atime6: 0
     atime7: 0
     m_Mode: 0
-    m_ColorSpace: -1
+    m_ColorSpace: 0
     m_NumColorKeys: 2
     m_NumAlphaKeys: 2
   m_InvalidColorGradient:
