@@ -91,7 +91,11 @@ public class TourManager : MonoBehaviour
 
     IEnumerator WaitAndAdvance()
     {
-        yield return new WaitForSeconds(4f);
+        // Wait for audio to finish playing (regardless of length)
+        while (ttsSpeaker.IsAudioPlaying())
+        {
+            yield return null;
+        }
 
         Debug.Log("➡️ Advancing after narration");
 
