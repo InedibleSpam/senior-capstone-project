@@ -41,6 +41,10 @@ public class Columbus_TTS : MonoBehaviour
             speaker.Speak("This is the veggie light cap.");
             break;
 
+        case "nanoracks":
+            speaker.Speak("These are the nanoracks.");
+            break;
+        
         case "manufacturingdevice":
             speaker.Speak("This is the manufacturing device.");
             break;
