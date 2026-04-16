@@ -4,22 +4,24 @@ using UnityEngine.InputSystem;
 [RequireComponent(typeof(CharacterController))]
 public class RealisticSpaceMovement : MonoBehaviour
 {
-    [Header("Thruster Settings")]
-    public float thrustAcceleration = 10f; // How fast you gain speed
-    public float maxSpeed = 5f;
-    
-    [Header("Physics (The 'Feel')")]
+    [Header("Movement Settings")]
+    public float thrustAcceleration = 8f; // How fast you pick up speed
+    public float maxSpeed = 4f;           // Cap speed for VR comfort
     [Range(0.1f, 10f)]
-    public float drag = 2f;            // How fast you naturally slow down
-    public float rotationSmoothing = 5f; // Higher = Snappier, Lower = Floatier
+    public float drag = 1.5f;             // How fast you naturally drift to a stop
+
+    [Header("Impact (Metal Thud)")]
+    public AudioClip impactSound;         // Assign "Metal Thud" here
+    public float minImpactSpeed = 0.5f;   // Minimum speed to trigger a sound
+    [Range(0f, 1f)]
+    public float impactVolume = 0.6f;
 
     [Header("References")]
     public InputActionAsset inputActions;
     public Transform cameraTransform;
 
     private CharacterController controller;
-    private InputActionMap playerActionMap;
-    
+    private AudioSource impactSource;
     private Vector2 moveInput;
     private Vector2 rotateInput;
     private Vector3 worldVelocity;
@@ -28,14 +30,24 @@ public class RealisticSpaceMovement : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
-        playerActionMap = inputActions.FindActionMap("Player");
-        playerActionMap.Enable();
 
-        playerActionMap.FindAction("Move").performed += ctx => moveInput = ctx.ReadValue<Vector2>();
-        playerActionMap.FindAction("Move").canceled += ctx => moveInput = Vector2.zero;
+        // Setup the "Thud" Speaker automatically
+        impactSource = gameObject.AddComponent<AudioSource>();
+        impactSource.playOnAwake = false;
+        impactSource.spatialBlend = 0f; // 2D sounds like it's "your" body/helmet hitting
 
-        playerActionMap.FindAction("VerticalMove").performed += ctx => rotateInput = ctx.ReadValue<Vector2>();
-        playerActionMap.FindAction("VerticalMove").canceled += ctx => rotateInput = Vector2.zero;
+        // Setup Input Actions
+        var actionMap = inputActions.FindActionMap("Player");
+        if (actionMap != null)
+        {
+            actionMap.Enable();
+            actionMap.FindAction("Move").performed += ctx => moveInput = ctx.ReadValue<Vector2>();
+            actionMap.FindAction("Move").canceled += ctx => moveInput = Vector2.zero;
+            
+            // Right stick X = Rotate, Y = Vertical Thrust
+            actionMap.FindAction("VerticalMove").performed += ctx => rotateInput = ctx.ReadValue<Vector2>();
+            actionMap.FindAction("VerticalMove").canceled += ctx => rotateInput = Vector2.zero;
+        }
     }
 
     void Update()
@@ -46,36 +58,52 @@ public class RealisticSpaceMovement : MonoBehaviour
 
     void HandleRotation()
     {
-        // Smooth rotation that feels like rotating a heavy object
+        // Smooth rotation momentum
         float targetRotSpeed = rotateInput.x * 60f; 
-        rotationVelocity = Mathf.Lerp(rotationVelocity, targetRotSpeed, Time.deltaTime * rotationSmoothing);
+        rotationVelocity = Mathf.Lerp(rotationVelocity, targetRotSpeed, Time.deltaTime * 4f);
         transform.Rotate(0, rotationVelocity * Time.deltaTime, 0);
     }
 
     void HandlePhysicsMovement()
     {
-        // 1. Get input direction relative to where you are looking
+        // 1. Calculate direction based on where you are looking
         Vector3 inputDir = (cameraTransform.right * moveInput.x) + (cameraTransform.forward * moveInput.y);
         
-        // Include vertical drift if you want the right stick Y to control Up/Down
+        // Use Right Stick Y for manual Up/Down thrust
         inputDir += transform.up * rotateInput.y;
 
-        // 2. Apply Acceleration
+        // 2. Apply Thrust
         if (inputDir.magnitude > 0.1f)
         {
-            // Pushing the stick adds velocity
             worldVelocity += inputDir * thrustAcceleration * Time.deltaTime;
         }
 
-        // 3. Apply Drag (The "Exponential Decay")
-        // This is the secret sauce: it reduces velocity by a percentage every frame
-        // rather than a fixed amount, leading to a smooth, realistic stop.
+        // 3. Apply Drift Drag (Exponential Decay)
         worldVelocity = Vector3.Lerp(worldVelocity, Vector3.zero, drag * Time.deltaTime);
 
-        // 4. Clamp speed so you don't become a rocket
+        // 4. Clamp to Max Speed
         worldVelocity = Vector3.ClampMagnitude(worldVelocity, maxSpeed);
 
-        // 5. Final Move
+        // 5. Execute Movement
         controller.Move(worldVelocity * Time.deltaTime);
+    }
+
+    // Fires when the CharacterController hits a wall, ceiling, or floor
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        float speedAtImpact = worldVelocity.magnitude;
+
+        if (speedAtImpact > minImpactSpeed && !impactSource.isPlaying)
+        {
+            // Subtle pitch randomization so it's not identical every time
+            impactSource.pitch = Random.Range(0.9f, 1.1f);
+            
+            // Scale volume by how fast you were going
+            float volume = Mathf.Clamp01(speedAtImpact / maxSpeed) * impactVolume;
+            impactSource.PlayOneShot(impactSound, volume);
+            
+            // PHYSICS: Lose 40% of your speed when you hit something (Inertia)
+            worldVelocity *= 0.6f; 
+        }
     }
 }
