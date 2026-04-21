@@ -22,23 +22,23 @@ public class Node1_TTS : MonoBehaviour
     switch (id)
     {
         case "patches":
-            speaker.Speak("These are patches.");
+            speaker.Speak("These patches in the unity module represent successful missions, spacewalks, or dockings by the crew.");
             break;
 
         case "biofuel_fridge":
-            speaker.Speak("This is a biofuel fridge.");
+            speaker.Speak("This is the Freezer/Refrigerator/Incubator Device for Galley Experimentation, or FRIDGE for short. It is used to store and incubate biological samples for scientific experiments. Or just food and drinks");
             break;
 
         case "food_warmer":
-            speaker.Speak("This is a food warmer.");
+            speaker.Speak("This is the food warmer. It functions like a hot plate and heats up food for the crew in ten to thirty minutes.");
             break;
 
         case "galley_middle":
-            speaker.Speak("This is the galley middle.");
+            speaker.Speak("This is part of the galley area that is used for daily dining and for storing food.");
             break;
 
         case "pwd":
-            speaker.Speak("This is the PWD.");
+            speaker.Speak("This is the Potable Water Dispenser or PWD for short. It provides clean, drinkable water for the crew.");
             break;
 
         default:
