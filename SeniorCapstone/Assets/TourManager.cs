@@ -61,20 +61,9 @@ public class TourManager : MonoBehaviour
         AnimateActiveArrows();
     }
 
-    private float lastNarrationTime = -10f;
-    private float narrationCooldown = 2f;
-
     // 🔊 Called by RoomTrigger
     public void PlayNarration(string id)
-        {
-            if (Time.time - lastNarrationTime < narrationCooldown)
-        {
-            Debug.Log("⛔ Blocked narration spam: " + id);
-            return;
-        }
-
-        lastNarrationTime = Time.time;
-
+    {
         if (isNarrating)
         {
             Debug.Log("🔊 Narration already in progress, skipping: " + id);
@@ -102,8 +91,6 @@ public class TourManager : MonoBehaviour
 
 IEnumerator WaitAndAdvance()
 {
-    yield return new WaitForSeconds(1f);
-
     // Wait while audio is playing
     while (ttsSpeaker.IsAudioPlaying())
     {

@@ -17102,7 +17102,7 @@ MonoBehaviour:
   thrustAcceleration: 10
   maxSpeed: 7
   drag: 2
-  impactSound: {fileID: 0}
+  impactSound: {fileID: 8300000, guid: 88a77155b4afc314fad3479d32ac5738, type: 3}
   minImpactSpeed: 0.5
   impactVolume: 0.6
   inputActions: {fileID: -944628639613478452, guid: 84c32709bba4ac747ae62d8dab799ef9, type: 3}
