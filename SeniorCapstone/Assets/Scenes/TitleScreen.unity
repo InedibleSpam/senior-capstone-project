@@ -1740,7 +1740,9 @@ MonoBehaviour:
   thrustAcceleration: 10
   maxSpeed: 5
   drag: 2
-  rotationSmoothing: 5
+  impactSound: {fileID: 0}
+  minImpactSpeed: 0.5
+  impactVolume: 0.6
   inputActions: {fileID: -944628639613478452, guid: 84c32709bba4ac747ae62d8dab799ef9, type: 3}
   cameraTransform: {fileID: 1272751235}
 --- !u!143 &592749820
@@ -3124,7 +3126,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1018990669}
         m_TargetAssemblyTypeName: TitleScreenManager, Assembly-CSharp
-        m_MethodName: StartFreeRoam
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -8,7 +8,7 @@ public class TourManager : MonoBehaviour
     public static TourManager Instance;
 
     [Header("VR UI Positioning")]
-    public Transform playerCamera; // XR Rig Camera
+    public Transform playerCamera; 
     public float uiDistance = 2f;
     public float verticalOffset = -0.2f;
 
@@ -24,21 +24,21 @@ public class TourManager : MonoBehaviour
     [Header("Arrows")]
     public GameObject[] stepArrows;
 
-    [Header("Arrow Animation Settings")] // ⭐ NEW
+    [Header("Arrow Animation Settings")] 
     public float floatHeight = 0.2f;
     public float floatSpeed = 2f;
     public float pulseSpeed = 2f;
     public float emissionIntensity = 2f;
     public Color emissionColor = Color.cyan;
 
-    private Dictionary<Transform, Vector3> arrowStartPositions = new Dictionary<Transform, Vector3>(); // ⭐ NEW
+    private Dictionary<Transform, Vector3> arrowStartPositions = new Dictionary<Transform, Vector3>(); 
 
     [Header("Doors")]
     public Collider[] lockedDoors;
 
     [Header("End UI")]
     public GameObject endScreenUI;
-    public CanvasGroup endScreenCanvasGroup; // ⭐ NEW
+    public CanvasGroup endScreenCanvasGroup; 
     public float fadeDuration = 1f;
 
     [Header("TTS")]
@@ -52,11 +52,11 @@ public class TourManager : MonoBehaviour
 
     void Start()
     {
-        CacheArrowStartPositions(); // ⭐ NEW
+        CacheArrowStartPositions();
         PlayNarration(welcomeNarrationID);
     }
 
-    void Update() // ⭐ NEW
+    void Update() 
     {
         AnimateActiveArrows();
     }
@@ -89,35 +89,34 @@ public class TourManager : MonoBehaviour
         StartCoroutine(WaitAndAdvance());
     }
 
-    IEnumerator WaitAndAdvance()
+IEnumerator WaitAndAdvance()
+{
+    // Wait while audio is playing
+    while (ttsSpeaker.IsAudioPlaying())
     {
-        // Wait for audio to finish playing (regardless of length)
-        while (ttsSpeaker.IsAudioPlaying())
-        {
-            yield return null;
-        }
-
-        Debug.Log("➡️ Advancing after narration");
-
-        isNarrating = false;
-
-        if (isWelcome)
-        {
-            isWelcome = false;
-            currentStep = 0;
-            UpdateStep();
-        }
-        else if (isFinished)
-        {
-            Debug.Log("🎉 Tour finished!");
-
-            OnTourFinished(); // ⭐ ADD THIS
-        }
-        else
-        {
-            NextStep();
-        }
+        yield return null;
     }
+
+    Debug.Log("➡️ Advancing after narration");
+
+    isNarrating = false;
+
+    if (isWelcome)
+    {
+        isWelcome = false;
+        currentStep = 0;
+        UpdateStep();
+    }
+    else if (isFinished)
+    {
+        Debug.Log("🎉 Tour finished!");
+        OnTourFinished();
+    }
+    else
+    {
+        NextStep();
+    }
+}
 
     public void NextStep()
     {

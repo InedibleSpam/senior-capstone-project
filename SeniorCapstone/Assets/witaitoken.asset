@@ -35,68 +35,14 @@ MonoBehaviour:
     isPrivate: 0
     createdAt: 2026-01-29T06:18:28-0800
     trainingStatus: 1
-    lastTrainDuration: 62
-    lastTrainedAt: 2026-02-10T05:37:17-0800
-    nextTrainAt: 2026-02-10T05:36:15-0800
+    lastTrainDuration: 9
+    lastTrainedAt: 2026-04-14T06:45:12-0700
+    nextTrainAt: 2026-04-14T06:45:03-0700
     intents:
-    - id: 1450582299910841
-      name: ask_object_function
-      entities:
-      - name: ask_object_function:ask_object_function
-        id: 903197692078420
-    - id: 4350285708585544
-      name: learn_more
-      entities:
-      - name: learn_more:learn_more
-        id: 1656224568881240
-    entities:
-    - name: ask_object_function
-      id: 1312724947349659
-      lookups:
-      - free-text
-      - keywords
-      roles:
-      - name: ask_object_function
-        id: 903197692078420
-      keywords:
-      - keyword: Explain this object
-        synonyms:
-        - Explain this object
-      - keyword: What does this do?
-        synonyms:
-        - what does this do?
-      - keyword: What is this used for?
-        synonyms:
-        - What is this used for?
-    - name: learn_more
-      id: 4006000346199782
-      lookups:
-      - free-text
-      - keywords
-      roles:
-      - name: learn_more
-        id: 1656224568881240
-      keywords:
-      - keyword: Give me more details
-        synonyms:
-        - Give me more details
-      - keyword: Learn more
-        synonyms:
-        - Learn more
-      - keyword: Tell me more
-        synonyms:
-        - tell me more
-    - name: object
-      id: 1400576214886618
-      lookups:
-      - keywords
-      roles:
-      - name: object
-        id: 1387071672743413
-      keywords:
-      - keyword: button
-        synonyms:
-        - button
+    - id: 821484740459986
+      name: wake_word
+      entities: []
+    entities: []
     traits: []
     versionTags: []
     voices:
