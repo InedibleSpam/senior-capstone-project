@@ -12,6 +12,9 @@ public class TourManager : MonoBehaviour
     public float uiDistance = 2f;
     public float verticalOffset = -0.2f;
 
+    [Header("Player Start Position")]
+    public Transform playerStartPosition;
+
     [Header("Tour State")]
     public int currentStep = 0;
     private bool isWelcome = true;
@@ -43,6 +46,7 @@ public class TourManager : MonoBehaviour
 
     [Header("TTS")]
     public Tour_TTS ttsSpeaker;
+    private bool isNarrating = false;
 
     private void Awake()
     {
@@ -66,6 +70,12 @@ public class TourManager : MonoBehaviour
 
     public void PlayNarration(string id)
     {
+        if (isNarrating)
+        {
+            Debug.Log("🔊 Narration already in progress, skipping: " + id);
+            return;
+        }
+
         if (ttsSpeaker == null)
         {
             Debug.LogError("TTS Speaker not assigned!");
@@ -73,6 +83,8 @@ public class TourManager : MonoBehaviour
         }
 
         Debug.Log("🔊 Playing narration: " + id);
+
+        isNarrating = true;
 
         StopAllCoroutines();
         SetAllDoors(true);
@@ -84,6 +96,8 @@ public class TourManager : MonoBehaviour
     private void OnNarrationFinished(string id)
     {
         Debug.Log("➡️ Advancing after narration: " + id);
+
+        isNarrating = false;
 
         if (isWelcome)
         {
@@ -298,6 +312,14 @@ public class TourManager : MonoBehaviour
 
         if (endScreenCanvasGroup != null)
             endScreenCanvasGroup.alpha = 0f;
+
+        // Reset player position to start
+        if (playerStartPosition != null && playerCamera != null)
+        {
+            // Assuming playerCamera is attached to the player or XR Origin
+            playerCamera.position = playerStartPosition.position;
+            playerCamera.rotation = playerStartPosition.rotation;
+        }
 
         PlayNarration(welcomeNarrationID);
     }
