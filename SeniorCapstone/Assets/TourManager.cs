@@ -12,6 +12,9 @@ public class TourManager : MonoBehaviour
     public float uiDistance = 2f;
     public float verticalOffset = -0.2f;
 
+    [Header("Player Start Position")]
+    public Transform playerStartPosition;
+
     [Header("Tour State")]
     public int currentStep = 0;
     private bool isWelcome = true;
@@ -42,12 +45,16 @@ public class TourManager : MonoBehaviour
     public float fadeDuration = 1f;
 
     [Header("TTS")]
-    public TourTest_TTS ttsSpeaker;
+    public Tour_TTS ttsSpeaker;
     private bool isNarrating = false;
 
     private void Awake()
     {
         Instance = this;
+        if (ttsSpeaker != null)
+        {
+            ttsSpeaker.OnNarrationFinished += OnNarrationFinished;
+        }
     }
 
     void Start()
@@ -61,7 +68,6 @@ public class TourManager : MonoBehaviour
         AnimateActiveArrows();
     }
 
-    // 🔊 Called by RoomTrigger
     public void PlayNarration(string id)
     {
         if (isNarrating)
@@ -85,38 +91,30 @@ public class TourManager : MonoBehaviour
         SetAllArrows(false);
 
         ttsSpeaker.SpeakByID(id);
-
-        StartCoroutine(WaitAndAdvance());
     }
 
-IEnumerator WaitAndAdvance()
-{
-    // Wait while audio is playing
-    while (ttsSpeaker.IsAudioPlaying())
+    private void OnNarrationFinished(string id)
     {
-        yield return null;
-    }
+        Debug.Log("➡️ Advancing after narration: " + id);
 
-    Debug.Log("➡️ Advancing after narration");
+        isNarrating = false;
 
-    isNarrating = false;
-
-    if (isWelcome)
-    {
-        isWelcome = false;
-        currentStep = 0;
-        UpdateStep();
+        if (isWelcome)
+        {
+            isWelcome = false;
+            currentStep = 0;
+            UpdateStep();
+        }
+        else if (isFinished)
+        {
+            Debug.Log("🎉 Tour finished!");
+            OnTourFinished();
+        }
+        else
+        {
+            NextStep();
+        }
     }
-    else if (isFinished)
-    {
-        Debug.Log("🎉 Tour finished!");
-        OnTourFinished();
-    }
-    else
-    {
-        NextStep();
-    }
-}
 
     public void NextStep()
     {
@@ -192,7 +190,6 @@ IEnumerator WaitAndAdvance()
         }
     }
 
-    // ⭐ NEW: Cache starting positions
     void CacheArrowStartPositions()
     {
         foreach (var arrowGroup in stepArrows)
@@ -206,7 +203,6 @@ IEnumerator WaitAndAdvance()
         }
     }
 
-    // ⭐ NEW: Animate arrows
     void AnimateActiveArrows()
     {
         if (currentStep >= stepArrows.Length) return;
@@ -316,6 +312,14 @@ IEnumerator WaitAndAdvance()
 
         if (endScreenCanvasGroup != null)
             endScreenCanvasGroup.alpha = 0f;
+
+        // Reset player position to start
+        if (playerStartPosition != null && playerCamera != null)
+        {
+            // Assuming playerCamera is attached to the player or XR Origin
+            playerCamera.position = playerStartPosition.position;
+            playerCamera.rotation = playerStartPosition.rotation;
+        }
 
         PlayNarration(welcomeNarrationID);
     }
