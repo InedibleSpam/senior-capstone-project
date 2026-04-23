@@ -42,12 +42,15 @@ public class TourManager : MonoBehaviour
     public float fadeDuration = 1f;
 
     [Header("TTS")]
-    public TourTest_TTS ttsSpeaker;
-    private bool isNarrating = false;
+    public Tour_TTS ttsSpeaker;
 
     private void Awake()
     {
         Instance = this;
+        if (ttsSpeaker != null)
+        {
+            ttsSpeaker.OnNarrationFinished += OnNarrationFinished;
+        }
     }
 
     void Start()
@@ -61,15 +64,8 @@ public class TourManager : MonoBehaviour
         AnimateActiveArrows();
     }
 
-    // 🔊 Called by RoomTrigger
     public void PlayNarration(string id)
     {
-        if (isNarrating)
-        {
-            Debug.Log("🔊 Narration already in progress, skipping: " + id);
-            return;
-        }
-
         if (ttsSpeaker == null)
         {
             Debug.LogError("TTS Speaker not assigned!");
@@ -78,45 +74,33 @@ public class TourManager : MonoBehaviour
 
         Debug.Log("🔊 Playing narration: " + id);
 
-        isNarrating = true;
-
         StopAllCoroutines();
         SetAllDoors(true);
         SetAllArrows(false);
 
         ttsSpeaker.SpeakByID(id);
-
-        StartCoroutine(WaitAndAdvance());
     }
 
-IEnumerator WaitAndAdvance()
-{
-    // Wait while audio is playing
-    while (ttsSpeaker.IsAudioPlaying())
+    private void OnNarrationFinished(string id)
     {
-        yield return null;
-    }
+        Debug.Log("➡️ Advancing after narration: " + id);
 
-    Debug.Log("➡️ Advancing after narration");
-
-    isNarrating = false;
-
-    if (isWelcome)
-    {
-        isWelcome = false;
-        currentStep = 0;
-        UpdateStep();
+        if (isWelcome)
+        {
+            isWelcome = false;
+            currentStep = 0;
+            UpdateStep();
+        }
+        else if (isFinished)
+        {
+            Debug.Log("🎉 Tour finished!");
+            OnTourFinished();
+        }
+        else
+        {
+            NextStep();
+        }
     }
-    else if (isFinished)
-    {
-        Debug.Log("🎉 Tour finished!");
-        OnTourFinished();
-    }
-    else
-    {
-        NextStep();
-    }
-}
 
     public void NextStep()
     {
@@ -192,7 +176,6 @@ IEnumerator WaitAndAdvance()
         }
     }
 
-    // ⭐ NEW: Cache starting positions
     void CacheArrowStartPositions()
     {
         foreach (var arrowGroup in stepArrows)
@@ -206,7 +189,6 @@ IEnumerator WaitAndAdvance()
         }
     }
 
-    // ⭐ NEW: Animate arrows
     void AnimateActiveArrows()
     {
         if (currentStep >= stepArrows.Length) return;
