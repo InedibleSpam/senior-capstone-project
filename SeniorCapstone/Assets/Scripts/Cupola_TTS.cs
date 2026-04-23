@@ -22,11 +22,11 @@ public class Cupola_TTS : MonoBehaviour
     switch (id)
     {
         case "mssav":
-            speaker.Speak("This is the MSSAV.");
+            speaker.Speak("This Mobile Servicing System avionics, or MSSAV, supports the station’s robotic arm network. From the Cupola, astronauts use robotics systems to move cargo and perform external operations.");
             break;
 
         case "bottomwindow":
-            speaker.Speak("This is the bottom window.");
+            speaker.Speak("These Cupola windows provide one of the best views on the station. Astronauts use them to observe Earth, watch station activities outside, and assist with robotic arm operations.");
             break;
     }
 }   

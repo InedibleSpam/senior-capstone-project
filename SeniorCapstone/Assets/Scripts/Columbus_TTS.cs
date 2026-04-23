@@ -22,59 +22,59 @@ public class Columbus_TTS : MonoBehaviour
     switch (id)
     {
         case "ADSEP":
-            speaker.Speak("This is the ADSEP.");
+            speaker.Speak("“The Advanced Diagnostic System, or ADSEP,is part of the station’s internal support electronics. It helps monitor systems, manage data, and keep onboard equipment operating reliably.");
             break;
 
         case "biofab":
-            speaker.Speak("This is a biofabricator.");
+            speaker.Speak("The BioFabrication Facility is a space-based 3D bioprinter. Scientists use it to create tissue samples in microgravity for future medical breakthroughs.");
             break;
 
         case "SABL":
-            speaker.Speak("This is the SABL.");
+            speaker.Speak("The Space Automated Bioproduct Laboratory, or SABL, is a scientific incubator used to study living organisms in space. It carefully controls temperature and conditions for biological experiments.");
             break;
 
         case "techshot":
-            speaker.Speak("This is the tech shot.");
+            speaker.Speak("This Techshot research unit supports advanced biotechnology experiments aboard the station. Systems like this help scientists study cells, tissues, and future medical manufacturing in microgravity.");
             break;
 
         case "veggielightcap":
-            speaker.Speak("This is the veggie light cap.");
+            speaker.Speak("This Veggie light cap provides the special LED lighting used to grow plants aboard the station. It helps astronauts study space farming for future missions.");
             break;
 
         case "nanoracks":
-            speaker.Speak("These are the nanoracks.");
+            speaker.Speak("This NanoRacks unit supports commercial and educational research in microgravity. It allows organizations on Earth to run experiments aboard the space station.");
             break;
         
         case "manufacturingdevice":
-            speaker.Speak("This is the manufacturing device.");
+            speaker.Speak("This manufacturing device allows astronauts to produce tools and parts in space. Technologies like this help future crews become more self-sufficient on long missions.");
             break;
 
         case "tangolab":
-            speaker.Speak("This is the Tango lab.");
+            speaker.Speak("TangoLab is an automated mini-laboratory used to run scientific experiments in space. It allows researchers on Earth to study biology and materials in microgravity without needing astronaut involvement.");
             break;
 
         case "xroots":
-            speaker.Speak("This is the X-Roots.");
+            speaker.Speak("eXposed Root On-Orbit Test System, or XROOTS, is a plant-growth technology experiment that studies how crops can grow with roots exposed to air in microgravity. Systems like this may help feed future crews on the Moon or Mars.");
             break;
 
         case "platereader":
-            speaker.Speak("This is the plate reader.");
+            speaker.Speak("This plate reader is a scientific instrument used to analyze many small samples at once. It helps researchers study biology, chemistry, and medicine in microgravity.");
             break;
 
         case "spacefibers":
-            speaker.Speak("This is the space fibers.");
+            speaker.Speak("SpaceFibers is a materials research experiment that studies how advanced fibers can be produced in microgravity. Some materials may be made with higher quality in space than on Earth.");
             break;
 
         case "spacebornecomputer":
-            speaker.Speak("This is the spacebornecomputer.");
+            speaker.Speak("The Spaceborne Computer test high-performance computing in orbit. Installed in Columbus, it helps researchers explore faster onboard data processing for future deep-space missions.");
             break;
 
         case "staars":
-            speaker.Speak("This is the STaARS.");
+            speaker.Speak("STaARS is an electronic control system used to manage research hardware inside Columbus. Panels like this help distribute power, monitor equipment, and support onboard experiments.");
             break;
 
         case "columbuspatches":
-            speaker.Speak("This is the Columbus Patches.");
+            speaker.Speak("These patches represent missions, crews, and international partners connected to the Columbus laboratory. They reflect the teamwork behind scientific research in orbit.");
             break;
 
         default:

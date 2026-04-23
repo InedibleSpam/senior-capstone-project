@@ -22,19 +22,19 @@ public class Airlock_Int_Sys_TTS : MonoBehaviour
     switch (id)
     {
         case "crewlock":
-            speaker.Speak("This is the crew lock.");
+            speaker.Speak("The Crew Lock is connected directly into space and is where the crew can conduct spacewalks from. It can support two US suits on the Umbilical Interface Assembly.");
             break;
 
         case "hatch":
-            speaker.Speak("This is a hatch.");
+            speaker.Speak("This is hatch is specifically the part of the equipment lock segment, and it allows access between the Equipment lock segment and the crew lock segment.");
             break;
 
         case "patches":
-            speaker.Speak("These are patches.");
+            speaker.Speak("These patches represent missions, crews, and international partners of the space station. While decorative, they reflect the teamwork and history behind human space exploration.");
             break;
 
         case "stowage":
-            speaker.Speak("This is the stowage area.");
+            speaker.Speak("This stowage area contains the EMU suits for spacewalking and the necessary equipment to check and maintain them.");
             break;
 
         default:

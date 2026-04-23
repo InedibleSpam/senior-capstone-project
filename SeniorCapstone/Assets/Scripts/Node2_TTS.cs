@@ -22,7 +22,7 @@ public class Node2_TTS : MonoBehaviour
     switch (id)
     {
         case "patches":
-            speaker.Speak("These are patches.");
+            speaker.Speak("These patches represent the missions, crews, and international partnerships that keep the station operating. In Harmony, they reflect the cooperation that connects the station together.");
             break;
 
         default:
