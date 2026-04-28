@@ -8,9 +8,12 @@ public class TourManager : MonoBehaviour
     public static TourManager Instance;
 
     [Header("VR UI Positioning")]
-    public Transform playerCamera; // XR Rig Camera
+    public Transform playerCamera; 
     public float uiDistance = 2f;
     public float verticalOffset = -0.2f;
+
+    [Header("Player Start Position")]
+    public Transform playerStartPosition;
 
     [Header("Tour State")]
     public int currentStep = 0;
@@ -24,44 +27,47 @@ public class TourManager : MonoBehaviour
     [Header("Arrows")]
     public GameObject[] stepArrows;
 
-    [Header("Arrow Animation Settings")] // ⭐ NEW
+    [Header("Arrow Animation Settings")] 
     public float floatHeight = 0.2f;
     public float floatSpeed = 2f;
     public float pulseSpeed = 2f;
     public float emissionIntensity = 2f;
     public Color emissionColor = Color.cyan;
 
-    private Dictionary<Transform, Vector3> arrowStartPositions = new Dictionary<Transform, Vector3>(); // ⭐ NEW
+    private Dictionary<Transform, Vector3> arrowStartPositions = new Dictionary<Transform, Vector3>(); 
 
     [Header("Doors")]
     public Collider[] lockedDoors;
 
     [Header("End UI")]
     public GameObject endScreenUI;
-    public CanvasGroup endScreenCanvasGroup; // ⭐ NEW
+    public CanvasGroup endScreenCanvasGroup; 
     public float fadeDuration = 1f;
 
     [Header("TTS")]
-    public TourTest_TTS ttsSpeaker;
+    public Tour_TTS ttsSpeaker;
     private bool isNarrating = false;
 
     private void Awake()
     {
         Instance = this;
+        if (ttsSpeaker != null)
+        {
+            ttsSpeaker.OnNarrationFinished += OnNarrationFinished;
+        }
     }
 
     void Start()
     {
-        CacheArrowStartPositions(); // ⭐ NEW
+        CacheArrowStartPositions();
         PlayNarration(welcomeNarrationID);
     }
 
-    void Update() // ⭐ NEW
+    void Update() 
     {
         AnimateActiveArrows();
     }
 
-    // 🔊 Called by RoomTrigger
     public void PlayNarration(string id)
     {
         if (isNarrating)
@@ -85,19 +91,11 @@ public class TourManager : MonoBehaviour
         SetAllArrows(false);
 
         ttsSpeaker.SpeakByID(id);
-
-        StartCoroutine(WaitAndAdvance());
     }
 
-    IEnumerator WaitAndAdvance()
+    private void OnNarrationFinished(string id)
     {
-        // Wait for audio to finish playing (regardless of length)
-        while (ttsSpeaker.IsAudioPlaying())
-        {
-            yield return null;
-        }
-
-        Debug.Log("➡️ Advancing after narration");
+        Debug.Log("➡️ Advancing after narration: " + id);
 
         isNarrating = false;
 
@@ -110,8 +108,7 @@ public class TourManager : MonoBehaviour
         else if (isFinished)
         {
             Debug.Log("🎉 Tour finished!");
-
-            OnTourFinished(); // ⭐ ADD THIS
+            OnTourFinished();
         }
         else
         {
@@ -193,7 +190,6 @@ public class TourManager : MonoBehaviour
         }
     }
 
-    // ⭐ NEW: Cache starting positions
     void CacheArrowStartPositions()
     {
         foreach (var arrowGroup in stepArrows)
@@ -207,7 +203,6 @@ public class TourManager : MonoBehaviour
         }
     }
 
-    // ⭐ NEW: Animate arrows
     void AnimateActiveArrows()
     {
         if (currentStep >= stepArrows.Length) return;
@@ -317,6 +312,14 @@ public class TourManager : MonoBehaviour
 
         if (endScreenCanvasGroup != null)
             endScreenCanvasGroup.alpha = 0f;
+
+        // Reset player position to start
+        if (playerStartPosition != null && playerCamera != null)
+        {
+            // Assuming playerCamera is attached to the player or XR Origin
+            playerCamera.position = playerStartPosition.position;
+            playerCamera.rotation = playerStartPosition.rotation;
+        }
 
         PlayNarration(welcomeNarrationID);
     }
