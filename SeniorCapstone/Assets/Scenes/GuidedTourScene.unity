@@ -1607,7 +1607,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -9625,7 +9625,7 @@ GameObject:
   - component: {fileID: 997383274}
   - component: {fileID: 997383273}
   m_Layer: 0
-  m_Name: Global_Ambience
+  m_Name: Global Ambience
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10161,6 +10161,10 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: e6b6ccd584cc13840b13fe9d4826c324, type: 2}
+    - target: {fileID: -6719973051455981288, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -6616970886333320705, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -10276,6 +10280,10 @@ PrefabInstance:
     - target: {fileID: -1547146177879941505, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
       propertyPath: m_AABB.m_Extent.z
       value: 0.101297215
+      objectReference: {fileID: 0}
+    - target: {fileID: -1147857904382580508, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -844591272167795552, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -12979,7 +12987,7 @@ MeshCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 5
   m_Convex: 0
   m_CookingOptions: 30
@@ -16860,13 +16868,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1469710932}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &1485069920 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8801824486076583532, guid: 5cdd8014b72d3ce478e17e562579b635, type: 3}
@@ -23302,6 +23310,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 410087041}
   - {fileID: 832575519}
+  - {fileID: 997383275}
   - {fileID: 1028686050}
   - {fileID: 477525407}
   - {fileID: 1347476963}
@@ -23316,4 +23325,3 @@ SceneRoots:
   - {fileID: 98777757}
   - {fileID: 1879847783}
   - {fileID: 189148290}
-  - {fileID: 997383275}
