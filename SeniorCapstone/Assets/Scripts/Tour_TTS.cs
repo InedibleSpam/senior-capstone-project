@@ -103,6 +103,11 @@ public class Tour_TTS : MonoBehaviour
         return audioSource.isPlaying;
     }
 
+    public void Stop()
+    {
+        speaker.Stop();
+    }
+
     void OnDisable()
     {
         Debug.Log("⚠️ TTSManager was disabled!");

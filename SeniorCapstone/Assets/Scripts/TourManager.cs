@@ -15,6 +15,9 @@ public class TourManager : MonoBehaviour
     [Header("Player Start Position")]
     public Transform playerStartPosition;
 
+    [Header("Interaction")]
+    public GameObject[] handRays; 
+
     [Header("Tour State")]
     public int currentStep = 0;
     private bool isWelcome = true;
@@ -47,6 +50,7 @@ public class TourManager : MonoBehaviour
     [Header("TTS")]
     public Tour_TTS ttsSpeaker;
     private bool isNarrating = false;
+    private string lastNarrationID;
 
     private void Awake()
     {
@@ -89,8 +93,43 @@ public class TourManager : MonoBehaviour
         StopAllCoroutines();
         SetAllDoors(true);
         SetAllArrows(false);
+        SetInteraction(false); 
+
+        lastNarrationID = id; 
 
         ttsSpeaker.SpeakByID(id);
+    }
+
+    public void SkipNarration()
+    {
+        if (!isNarrating) return;
+
+        Debug.Log("⏭️ Skipping narration");
+
+        if (ttsSpeaker != null)
+        {
+            ttsSpeaker.Stop();
+        }
+
+        isNarrating = false;
+        SetInteraction(true);
+
+        OnNarrationFinished(lastNarrationID);
+    }
+
+    public void ReplayNarration()
+    {
+        if (string.IsNullOrEmpty(lastNarrationID)) return;
+
+        Debug.Log("🔁 Replaying narration: " + lastNarrationID);
+
+        if (ttsSpeaker != null)
+        {
+            ttsSpeaker.Stop();
+        }
+
+        isNarrating = false; 
+        PlayNarration(lastNarrationID);
     }
 
     private void OnNarrationFinished(string id)
@@ -98,6 +137,7 @@ public class TourManager : MonoBehaviour
         Debug.Log("➡️ Advancing after narration: " + id);
 
         isNarrating = false;
+        SetInteraction(true); 
 
         if (isWelcome)
         {
@@ -232,6 +272,17 @@ public class TourManager : MonoBehaviour
                 mat.EnableKeyword("_EMISSION");
                 mat.SetColor("_EmissionColor", finalColor);
             }
+        }
+    }
+
+    void SetInteraction(bool enabled)
+    {
+        if (handRays == null) return;
+
+        foreach (var ray in handRays)
+        {
+            if (ray != null)
+                ray.SetActive(enabled);
         }
     }
 
