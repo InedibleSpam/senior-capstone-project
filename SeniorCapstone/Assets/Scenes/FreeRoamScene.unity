@@ -23478,6 +23478,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FreeRoamManager
   ttsSpeaker: {fileID: 1225012267}
+  rayInteractors:
+  - {fileID: 984213078}
+  - {fileID: 967991079}
 --- !u!4 &2059063622
 Transform:
   m_ObjectHideFlags: 0
