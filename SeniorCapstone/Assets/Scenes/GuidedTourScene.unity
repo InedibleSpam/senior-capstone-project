@@ -1070,6 +1070,13 @@ MonoBehaviour:
   uiDistance: 2
   verticalOffset: -0.2
   playerStartPosition: {fileID: 1469710933}
+  rayInteractors:
+  - {fileID: 1341757948}
+  - {fileID: 704885933}
+  worldMask:
+    m_Bits: 0
+  uiMask:
+    m_Bits: 0
   currentStep: 0
   welcomeNarrationID: Welcome
   finishedNarrationID: Finished
