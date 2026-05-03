@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class TourManager : MonoBehaviour
 {
@@ -16,7 +18,9 @@ public class TourManager : MonoBehaviour
     public Transform playerStartPosition;
 
     [Header("Interaction")]
-    public GameObject[] handRays; 
+    public XRRayInteractor[] rayInteractors;
+    public InteractionLayerMask worldMask;
+    public InteractionLayerMask uiMask;
 
     [Header("Tour State")]
     public int currentStep = 0;
@@ -67,7 +71,7 @@ public class TourManager : MonoBehaviour
         PlayNarration(welcomeNarrationID);
     }
 
-    void Update() 
+    void Update()
     {
         AnimateActiveArrows();
     }
@@ -90,46 +94,13 @@ public class TourManager : MonoBehaviour
 
         isNarrating = true;
 
-        StopAllCoroutines();
         SetAllDoors(true);
         SetAllArrows(false);
-        SetInteraction(false); 
+        SetWorldInteraction(false); 
 
         lastNarrationID = id; 
 
         ttsSpeaker.SpeakByID(id);
-    }
-
-    public void SkipNarration()
-    {
-        if (!isNarrating) return;
-
-        Debug.Log("⏭️ Skipping narration");
-
-        if (ttsSpeaker != null)
-        {
-            ttsSpeaker.Stop();
-        }
-
-        isNarrating = false;
-        SetInteraction(true);
-
-        OnNarrationFinished(lastNarrationID);
-    }
-
-    public void ReplayNarration()
-    {
-        if (string.IsNullOrEmpty(lastNarrationID)) return;
-
-        Debug.Log("🔁 Replaying narration: " + lastNarrationID);
-
-        if (ttsSpeaker != null)
-        {
-            ttsSpeaker.Stop();
-        }
-
-        isNarrating = false; 
-        PlayNarration(lastNarrationID);
     }
 
     private void OnNarrationFinished(string id)
@@ -137,7 +108,7 @@ public class TourManager : MonoBehaviour
         Debug.Log("➡️ Advancing after narration: " + id);
 
         isNarrating = false;
-        SetInteraction(true); 
+        SetWorldInteraction(true); 
 
         if (isWelcome)
         {
@@ -275,14 +246,14 @@ public class TourManager : MonoBehaviour
         }
     }
 
-    void SetInteraction(bool enabled)
+    void SetWorldInteraction(bool enabled)
     {
-        if (handRays == null) return;
-
-        foreach (var ray in handRays)
+        foreach (var ray in rayInteractors)
         {
             if (ray != null)
-                ray.SetActive(enabled);
+            {
+                ray.enabled = enabled;
+            }
         }
     }
 
@@ -312,7 +283,6 @@ public class TourManager : MonoBehaviour
         endScreenCanvasGroup.alpha = 0f;
         endScreenUI.transform.localScale = Vector3.one * 0.8f;
 
-        // Disable interaction during fade
         endScreenCanvasGroup.interactable = false;
         endScreenCanvasGroup.blocksRaycasts = false;
 

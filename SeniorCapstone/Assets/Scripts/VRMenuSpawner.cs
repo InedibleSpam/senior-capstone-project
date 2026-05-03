@@ -76,6 +76,12 @@ public class ISSMenuManager : MonoBehaviour
         }
     }
 
+    public void SetVolume(float volume)
+{
+    // This controls the volume of everything the player hears
+    AudioListener.volume = volume;
+}
+
     public void RestartExperience()
     {
         Time.timeScale = 1f;
