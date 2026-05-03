@@ -8,7 +8,7 @@ public class BatchSetupInteractableGlows : EditorWindow
     private const string GlowMaterialName = "Interactable_glow";
 
     // Final recommended subtle shell scale.
-    private const float GlowScale = 1.02f;
+    private const float GlowScale = 1f;
 
     [MenuItem("Tools/Interactables/Setup Glow On Selected Objects")]
     public static void SetupGlowOnSelectedObjects()
