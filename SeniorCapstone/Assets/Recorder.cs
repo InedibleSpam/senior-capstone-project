@@ -20,14 +20,21 @@ public class Recorder : MonoBehaviour
     public void Awake()
     {
         if (Microphone.devices.Length > 0)
-        {
-            microphoneDevice = Microphone.devices[0];
-            Debug.Log("Using microphone: " + microphoneDevice);
-        }
-        else
-        {
-            Debug.LogWarning("No microphone found.");
-        }
+{
+    foreach (var device in Microphone.devices)
+    {
+        Debug.Log("Mic found: " + device);
+    }
+
+    // 🔥 THIS IS THE FIX
+    microphoneDevice = null; // use default device (best for Oculus)
+
+    Debug.Log("Using DEFAULT microphone");
+}
+else
+{
+    Debug.LogError("NO MICROPHONE FOUND");
+}
 
         // Setup audio source
         audioSource = gameObject.AddComponent<AudioSource>();

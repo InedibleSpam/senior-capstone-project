@@ -15,7 +15,7 @@ public class RecordBehaviour : MonoBehaviour
     private bool isProcessing = false;
 
     // SETTINGS (tweak these if needed)
-    float minVolume = 0.0005f;
+    float minVolume = 0.0001f;
     float silenceDuration = 1.5f;
 
     void Start()
@@ -124,18 +124,31 @@ public class RecordBehaviour : MonoBehaviour
     }
 
     float GetVolume(AudioClip clip)
+{
+    int sampleWindow = 1024;
+    float[] samples = new float[sampleWindow];
+
+    int micPosition = Microphone.GetPosition(recorder.microphoneDevice) - sampleWindow;
+
+    if (micPosition < 0)
+        return 0;
+
+    clip.GetData(samples, micPosition);
+
+    float levelMax = 0;
+
+    for (int i = 0; i < sampleWindow; i++)
     {
-        float[] samples = new float[clip.samples];
-        clip.GetData(samples, 0);
-
-        float sum = 0f;
-        for (int i = 0; i < samples.Length; i++)
+        float wavePeak = Mathf.Abs(samples[i]);
+        if (wavePeak > levelMax)
         {
-            sum += Mathf.Abs(samples[i]);
+            levelMax = wavePeak;
         }
-
-        return sum / samples.Length;
     }
+
+    // 🔥 BOOST (CRITICAL FOR OCULUS)
+    return levelMax * 50f;
+}
 
     string NormalizeText(string input)
     {
