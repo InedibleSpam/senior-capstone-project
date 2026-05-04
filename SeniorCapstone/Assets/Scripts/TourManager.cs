@@ -54,6 +54,7 @@ public class TourManager : MonoBehaviour
     [Header("TTS")]
     public Tour_TTS ttsSpeaker;
     private bool isNarrating = false;
+    private bool isTourNarration = false;
     private string lastNarrationID;
 
     private void Awake()
@@ -93,6 +94,7 @@ public class TourManager : MonoBehaviour
         Debug.Log("🔊 Playing narration: " + id);
 
         isNarrating = true;
+        isTourNarration = true;
 
         SetAllDoors(true);
         SetAllArrows(false);
@@ -105,9 +107,16 @@ public class TourManager : MonoBehaviour
 
     private void OnNarrationFinished(string id)
     {
+        if (!isTourNarration || id != lastNarrationID)
+        {
+            Debug.Log("↩️ Ignored non-tour narration finish: " + id);
+            return;
+        }
+
         Debug.Log("➡️ Advancing after narration: " + id);
 
         isNarrating = false;
+        isTourNarration = false;
         SetWorldInteraction(true); 
 
         if (isWelcome)
