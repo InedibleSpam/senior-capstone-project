@@ -8,11 +8,6 @@ public class Free_Roam_TTS : MonoBehaviour
 
     private Dictionary<string, string> narrationMap;
 
-    public event System.Action<string> OnNarrationStarted;
-    public event System.Action<string> OnNarrationFinished;
-
-    private string currentNarrationID;
-
     void Awake()
     {
         speaker = GetComponent<TTSSpeaker>();
@@ -21,9 +16,6 @@ public class Free_Roam_TTS : MonoBehaviour
         {
             Debug.LogError("TTSSpeaker component not found on this GameObject!");
         }
-
-        // Subscribe to the finished speaking event
-        speaker.Events.OnPlaybackComplete.AddListener((spk, clipId) => OnSpeakingComplete());
 
         // Centralized narration definitions
         narrationMap = new Dictionary<string, string>()
@@ -47,10 +39,8 @@ public class Free_Roam_TTS : MonoBehaviour
 
         if (narrationMap.TryGetValue(id, out string text))
         {
-            currentNarrationID = id;
             speaker.Speak(text);
             spokenModules.Add(id);
-            OnNarrationStarted?.Invoke(id);
         }
         else
         {
@@ -62,11 +52,6 @@ public class Free_Roam_TTS : MonoBehaviour
     {
         if (speaker == null) return;
         speaker.Speak(text);
-    }
-
-    private void OnSpeakingComplete()
-    {
-        OnNarrationFinished?.Invoke(currentNarrationID);
     }
 
     void OnDisable()

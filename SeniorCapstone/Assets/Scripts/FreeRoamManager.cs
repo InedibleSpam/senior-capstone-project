@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class FreeRoamManager : MonoBehaviour
 {
@@ -8,20 +7,12 @@ public class FreeRoamManager : MonoBehaviour
     [Header("TTS Reference")]
     public Free_Roam_TTS ttsSpeaker;
 
-    [Header("Interaction")]
-    public XRRayInteractor[] rayInteractors;
-
     private void Awake()
     {
         // Singleton pattern so the triggers can find this easily
         if (Instance == null)
         {
             Instance = this;
-            if (ttsSpeaker != null)
-            {
-                ttsSpeaker.OnNarrationStarted += OnNarrationStarted;
-                ttsSpeaker.OnNarrationFinished += OnNarrationFinished;
-            }
         }
         else
         {
@@ -46,27 +37,6 @@ public class FreeRoamManager : MonoBehaviour
         else
         {
             Debug.LogError("ExperienceManager: No Free_Roam_TTS found in scene!");
-        }
-    }
-
-    private void OnNarrationStarted(string id)
-    {
-        SetWorldInteraction(false);
-    }
-
-    private void OnNarrationFinished(string id)
-    {
-        SetWorldInteraction(true);
-    }
-
-    void SetWorldInteraction(bool enabled)
-    {
-        foreach (var ray in rayInteractors)
-        {
-            if (ray != null)
-            {
-                ray.enabled = enabled;
-            }
         }
     }
 }
