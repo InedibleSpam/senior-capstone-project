@@ -20840,7 +20840,7 @@ Canvas:
   m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 2
-  m_Camera: {fileID: 0}
+  m_Camera: {fileID: 1921439577}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -24586,7 +24586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7fe96e7923d6e4caf6740e50034935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  pauseMenuUI: {fileID: 0}
+  pauseMenuUI: {fileID: 1915778779}
   playerHead: {fileID: 1921439573}
   spawnDistance: 0.5
   menuButton:
@@ -31646,9 +31646,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FreeRoamManager
   ttsSpeaker: {fileID: 1225012267}
-  rayInteractors:
-  - {fileID: 984213078}
-  - {fileID: 967991079}
 --- !u!4 &2059063622
 Transform:
   m_ObjectHideFlags: 0
