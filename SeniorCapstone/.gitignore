@@ -107,3 +107,19 @@ InitTestScene*.unity*
 
 # Auto-generated scenes by play mode tests
 /[Aa]ssets/[Ii]nit[Tt]est[Ss]cene*.unity*
+
+# Unity generated build output
+SeniorCapstone/buildprofile1_BackUpThisFolder_ButDontShipItWithYourGame/
+SeniorCapstone/Build/
+SeniorCapstone/Builds/
+
+# Unity recovery files
+SeniorCapstone/Assets/_Recovery/
+SeniorCapstone/Assets/_Recovery.meta
+
+# Unity generated folders
+SeniorCapstone/Library/
+SeniorCapstone/Temp/
+SeniorCapstone/Obj/
+SeniorCapstone/Logs/
+SeniorCapstone/UserSettings/
