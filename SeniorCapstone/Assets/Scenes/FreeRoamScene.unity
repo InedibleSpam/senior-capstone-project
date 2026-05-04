@@ -6963,7 +6963,7 @@ MonoBehaviour:
   PrependedText: 
   AppendedText: 
   _ttsService: {fileID: 1656967587}
-  presetVoiceID: WIT$TRENDY
+  presetVoiceID: WIT$CAM
   customWitVoiceSettings:
     SettingsId: 
     PrependedText: 
@@ -29457,7 +29457,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921439572}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1921439577
 Camera:
   m_ObjectHideFlags: 0
