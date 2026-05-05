@@ -1462,7 +1462,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1570611389}
         m_TargetAssemblyTypeName: ISSMenuManager, Assembly-CSharp
         m_MethodName: Recenter
         m_Mode: 1
@@ -7331,7 +7331,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1570611389}
         m_TargetAssemblyTypeName: ISSMenuManager, Assembly-CSharp
         m_MethodName: Resume
         m_Mode: 1
@@ -10006,7 +10006,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1570611389}
         m_TargetAssemblyTypeName: ISSMenuManager, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
@@ -18224,7 +18224,7 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1570611389}
         m_TargetAssemblyTypeName: ISSMenuManager, Assembly-CSharp
         m_MethodName: SetVolume
         m_Mode: 4
@@ -19868,7 +19868,7 @@ MonoBehaviour:
   PrependedText: 
   AppendedText: 
   _ttsService: {fileID: 1225012272}
-  presetVoiceID: WIT$CARL
+  presetVoiceID: WIT$CONNOR
   customWitVoiceSettings:
     SettingsId: 
     PrependedText: 
@@ -29593,7 +29593,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921439572}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &1921439577
 Camera:
   m_ObjectHideFlags: 0
